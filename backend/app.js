@@ -14,6 +14,6 @@ app.use("/",(req, res,next) => {
 mongoose.connect("mongodb+srv://itpproject2080:Project2080@mdms.7ckq38t.mongodb.net/Inventory_management?retryWrites=true&w=majority&appName=MDMS")
 .then(() => console.log("Connected to mongoDB"))
 .then(() => {
-    app.listen(3000);
+    app.listen(8070);
 })
 .catch((err) => console.log((err)));
