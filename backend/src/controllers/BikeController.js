@@ -1,25 +1,7 @@
-const Bike = require("../models/IM_BikeModel");
+const Bike = require("../models/BikeModel");
 
 
-//Insert part
-const addBikes = async (req, res, next) => {
-    const {Bike_Image,Bike_ID,Bike_Name,Price,Description,Colour,Received,In_Stock} = req.body;
-    let bikes;
-    try {
-        bikes = new Bike({Bike_Image,Bike_ID,Bike_Name,Price,Description,Colour,Received,In_Stock});
-        await bikes.save();
-    }catch (err) {
-         console.log(err);
-    }
-
-    //not insert bikes
-    if(!bikes){
-        return res.status(404).json({message:"unable to add bike"});
-    }
-
-    return res.status(200).json({bikes});
-};
-
+//Display part
 const getAllBikes = async (req, res, next) => {
     let bikes;
     //Get all bikes
@@ -35,6 +17,25 @@ const getAllBikes = async (req, res, next) => {
     }
 
     //Display all bikes
+    return res.status(200).json({bikes});
+};
+
+//Insert part
+const addBikes = async (req, res, next) => {
+    const {Image,Bike_ID,Bike_Name,Price,Description,Colour,Received,In_Stock} = req.body;
+    let bikes;
+    try {
+        bikes = new Bike({Image,Bike_ID,Bike_Name,Price,Description,Colour,Received,In_Stock});
+        await bikes.save();
+    }catch (err) {
+         console.log(err);
+    }
+
+    //not insert bikes
+    if(!bikes){
+        return res.status(404).json({message:"unable to add bike"});
+    }
+
     return res.status(200).json({bikes});
 };
 
@@ -63,12 +64,12 @@ return res.status(200).json({bike});
 //update bike details
 const updateBike = async (req, res, next) => {
     const id = req.params.id;
-    const {Bike_Image,Bike_ID,Bike_Name,Price,Description,Colour,Received,In_Stock} = req.body;
+    const {Image,Bike_ID,Bike_Name,Price,Description,Colour,Received,In_Stock} = req.body;
     
 let bikes;
   try {
      bikes = await Bike.findByIdAndUpdate(id,
-        {Bike_Image: Bike_Image,Bike_ID: Bike_ID,Bike_Name: Bike_Name,Price: Price,Description: Description,Colour: Colour,Received: Received,In_Stock: In_Stock});
+        {Image: Image,Bike_ID: Bike_ID,Bike_Name: Bike_Name,Price: Price,Description: Description,Colour: Colour,Received: Received,In_Stock: In_Stock});
         bikes = await bikes.save();
   }catch (err) {
     console.log(err);

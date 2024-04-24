@@ -1,25 +1,4 @@
-const Item = require("../models/IM_ItemModel");
-
-
-
-//Insert part
-const addItems = async (req, res, next) => {
-    const {Item_Image,Item_ID,Item_Name,Price,Manufacturer,Category,Compatible_Motorcycle_Models,Received,In_Stock} = req.body;
-    let items;
-    try {
-        items = new Item({Item_Image,Item_ID,Item_Name,Price,Manufacturer,Category,Compatible_Motorcycle_Models,Received,In_Stock});
-        await items.save();
-    }catch (err) {
-         console.log(err);
-    }
-
-    //not insert items
-    if(!items){
-        return res.status(404).json({message:"unable to add items"});
-    }
-
-    return res.status(200).json({items});
-};
+const Item = require("../models/ItemModels");
 
 //Display part
 const getAllItems = async (req, res, next) => {
@@ -39,6 +18,28 @@ const getAllItems = async (req, res, next) => {
     //Display all items
     return res.status(200).json({items});
 };
+
+
+
+//Insert part
+const addItems = async (req, res, next) => {
+    const {Image,Item_ID,Item_Name,Price,Manufacturer,Category,Compatible_Motorcycle_Models,Received,In_Stock} = req.body;
+    let items;
+    try {
+        items = new Item({Image,Item_ID,Item_Name,Price,Manufacturer,Category,Compatible_Motorcycle_Models,Received,In_Stock});
+        await items.save();
+    }catch (err) {
+         console.log(err);
+    }
+
+    //not insert items
+    if(!items){
+        return res.status(404).json({message:"unable to add items"});
+    }
+
+    return res.status(200).json({items});
+};
+
 
 //get by Id
 const getById = async (req, res, next) =>
@@ -65,11 +66,11 @@ return res.status(200).json({item});
 //update item details
 const updateItem = async (req, res, next) => {
     const id = req.params.id;
-    const {Item_Image,Item_ID,Item_Name,Price,Manufacturer,Category,Compatible_Motorcycle_Models,Received,In_Stock} = req.body;
+    const {Image,Item_ID,Item_Name,Price,Manufacturer,Category,Compatible_Motorcycle_Models,Received,In_Stock} = req.body;
 let items;
   try {
      items = await Item.findByIdAndUpdate(id,
-        {Item_Image, Item_Image ,Item_ID: Item_ID,Item_Name: Item_Name,Price: Price,Manufacturer: Manufacturer,Category: Category,Compatible_Motorcycle_Models: Compatible_Motorcycle_Models,Received: Received,In_Stock: In_Stock});
+        {Image: Image,Item_ID: Item_ID,Item_Name: Item_Name,Price: Price,Manufacturer: Manufacturer,Category: Category,Compatible_Motorcycle_Models: Compatible_Motorcycle_Models,Received: Received,In_Stock: In_Stock});
         items = await items.save();
   }catch (err) {
     console.log(err);

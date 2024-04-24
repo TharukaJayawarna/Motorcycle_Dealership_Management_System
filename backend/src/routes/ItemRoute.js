@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-
 //Insert model
-const Item = require("../models/IM_ItemModel");
-
+const Item = require("../models/ItemModels");
 //Insert User controller 
-const ItemController = require("../controllers/IM_ItemController");
+const ItemController = require("../controllers/ItemControllers");
+
+
 
 router.get("/",ItemController.getAllItems);
 router.post("/",ItemController.addItems);

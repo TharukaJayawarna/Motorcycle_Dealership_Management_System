@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 //Insert model
-const Bike = require("../models/IM_BikeModel");
+const Bike = require("../models/BikeModel");
 //Insert Bike controller 
-const BikeController = require("../controllers/IM_BikeController");
+const BikeController = require("../controllers/BikeController");
 
 router.get("/",BikeController.getAllBikes);
 router.post("/",BikeController.addBikes);
