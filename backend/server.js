@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
-const connectDB = require("./Config/db.js")
+const connectDB = require("./config/db.js")
 const dotenv = require("dotenv")
 const cors = require("cors");
 const app = express();
@@ -9,8 +9,8 @@ const app = express();
 dotenv.config(); 
 connectDB();
 
-const RateRoute = require("./Routes/RateRoute.js")
-const ComplaintRoute = require("./Routes/ComplaintRoute.js")
+const RateRoute = require("./routes/RateRoute.js")
+const ComplaintRoute = require("./routes/ComplaintRoute.js")
 app.use(cors());
 app.use(express.json());
 

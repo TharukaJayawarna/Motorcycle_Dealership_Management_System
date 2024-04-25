@@ -1,10 +1,10 @@
 const express = require("express");
 const complaintRouter = express.Router();
 // Insert Model
-const Complaint = require("../Model/ComplaintModel");
+const Complaint = require("../modules/ComplaintModel");
 
 // Insert Controller
-const ComplaintController = require("../Controllers/ComplaintController");
+const ComplaintController = require("../controllers/ComplaintController");
 
 complaintRouter.get("/", ComplaintController.getAllComplaints);
 complaintRouter.post("/", ComplaintController.addComplaint);

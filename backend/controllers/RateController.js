@@ -1,4 +1,4 @@
-const Rate = require("../Model/RateModel");
+const Rate = require("../modules/RateModel");
 
 const getAllRate = async (req, res, next) => {
   let rate;

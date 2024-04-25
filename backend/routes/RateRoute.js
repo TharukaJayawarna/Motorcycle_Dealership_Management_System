@@ -1,11 +1,11 @@
 const express = require("express");
 const rate_router = express.Router();
 //Insert Model
-const Rate = require("../Model/RateModel");
+const Rate = require("../modules/RateModel");
 
 
 //Insert User Controller
-const RateController = require("../Controllers/RateController");
+const RateController = require("../controllers/RateController");
 
 rate_router.get("/", RateController.getAllRate);
 rate_router.post("/", RateController.addRate);
