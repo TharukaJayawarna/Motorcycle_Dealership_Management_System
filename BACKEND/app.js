@@ -1,0 +1,18 @@
+const express = require("express");
+const mongoose = require("mongoose");
+const router = require("./Route/supplierRoutes");
+
+const app = express();
+const cors = require("cors");
+
+//Middleware
+app.use(express.json());
+app.use(cors());
+app.use("/suppliers",router);
+
+mongoose.connect("mongodb+srv://itpproject2080:Project2080@mdms.7ckq38t.mongodb.net/")
+.then(()=> console.log("connect to MongoDB"))
+.then(() =>{
+    app.listen(5000);
+})
+.catch((err) => console.log((err)));

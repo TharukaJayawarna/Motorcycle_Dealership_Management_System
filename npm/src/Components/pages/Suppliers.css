@@ -1,0 +1,102 @@
+/* Main container for the supplier profile */
+.suppliers-profile {
+    max-width: 600px; /* Maximum width of the container */
+    margin: 20px auto; /* Center the container */
+    padding: 20px; /* Padding around the container */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #93c4e7; /* Light background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+}
+
+/* Style for the profile header section */
+.profile-header {
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Vertically center the items */
+    margin-bottom: 20px; /* Margin below the header */
+}
+
+/* Style for the profile image */
+.profile-image {
+    width: 100px; /* Width of the profile image */
+    height: 100px; /* Height of the profile image */
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Cover the image */
+    margin-right: 20px; /* Space between image and text */
+}
+
+/* Style for the profile details section */
+.profile-details {
+    margin-bottom: 20px; /* Margin below the profile details */
+}
+
+/* Style for the profile details text */
+.profile-details p {
+    font-size: 14px; /* Font size */
+    color: #333; /* Text color */
+    margin-bottom: 10px; /* Margin below each paragraph */
+}
+
+/* Style for the product list */
+.products {
+    margin-top: 20px; /* Margin above the products section */
+}
+
+/* Style for the product list heading */
+.products h3 {
+    font-size: 18px; /* Font size */
+    margin-bottom: 10px; /* Margin below the heading */
+}
+
+/* Style for the product list items */
+.products ul {
+    list-style-type: disc; /* Use a disc for the list style */
+    padding-left: 20px; /* Indentation for the list */
+}
+
+/* Style for individual list items */
+.products li {
+    font-size: 14px; /* Font size */
+    color: #333; /* Text color */
+    margin-bottom: 5px; /* Margin below each list item */
+}
+
+
+
+
+
+
+/* Styling for the buttons container */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Styling for the action buttons */
+.action-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Styles for each specific button */
+.save-button {
+    background-color: #090707; /* Green background for Save button */
+}
+
+.update-button {
+    background-color: #090707; /* Yellow background for Update button */
+}
+
+.delete-button {
+    background-color: #090707; /* Red background for Delete button */
+}
+
+/* Hover effect for the buttons */
+.action-button:hover {
+    opacity: 0.8;
+}
