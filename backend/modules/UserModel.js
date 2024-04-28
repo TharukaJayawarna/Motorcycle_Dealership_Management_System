@@ -19,6 +19,9 @@ const userSchema = new mongoose.Schema({
     enum: ["Admin", "Manager", "Customer", "Employee"],
     default: "Customer",
   },
+  image: {
+    type: String,
+  },
 });
 
 const UserModal = mongoose.model("User", userSchema);

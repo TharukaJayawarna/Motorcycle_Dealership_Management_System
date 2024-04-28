@@ -1,0 +1,149 @@
+/* Users.css */
+
+/* Style for the Users component */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.no-results {
+  margin-top: 20px;
+  color: red;
+}
+
+/* Style for the Users Table */
+.users-table-container {
+  margin-top: 20px;
+  width: calc(
+    100% - 220px
+  ); /* Width of the viewport minus the width of the vertical navigation bar */
+  margin-left: 220px; /* Width of the vertical navigation bar + some margin */
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.users-table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.users-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* NavigationBar.css */
+
+.vertical-navbar {
+  height: 100%;
+  width: 200px; /* Adjust the width according to your design */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: #333;
+  padding-top: 20px;
+}
+
+.vertical-navbar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+}
+
+.vertical-navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Additional Styling for Horizontal Menu */
+.home-ui {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 200px); /* Adjust the width according to your design */
+}
+
+.home-ll {
+  float: left;
+}
+
+.home-ll h1 {
+  display: inline;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.active {
+  background-color: #4caf50;
+}
+
+.user-btn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.table-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
