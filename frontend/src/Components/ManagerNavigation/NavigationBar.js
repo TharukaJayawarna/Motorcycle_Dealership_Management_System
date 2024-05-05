@@ -12,8 +12,8 @@ function NavigationBar() {
         <Link to="/ViewRequest ">View Request </Link>
         <Link to="/AnalyzeFeedbackAndComplaints ">Analyze Feedback And Complaints </Link>
         <Link to="/FinancialManagement">Financial Management</Link>
-        <Link to="/notification">Notification</Link>
-        <Link to="/Promotion">Promotion</Link>
+        <Link to="/notification">Notification and Promotion</Link>
+        
         
       </div>
     </div>

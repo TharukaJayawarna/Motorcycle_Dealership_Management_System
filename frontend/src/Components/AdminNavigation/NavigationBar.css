@@ -1,33 +1,50 @@
-/* NavigationBar.css */
-
-.upper-navbar {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-}
-
 .vertical-navbar {
-  width: 200px;
+  width: 240px; /* Adjust width as needed */
+  background-color: #333;
   position: fixed;
-  left: 0;
-  top: 50px; /* Adjust according to your upper navbar height */
+  top: 0;
+  left: -240px; /* Initially hide the navbar off-screen */
   height: 100%;
-  background-color: #f2f2f2;
+  overflow-x: hidden;
   padding-top: 20px;
+  border-right: 2px solid #fff; /* Add border for a distinct look */
+  z-index: 999; /* Ensure the navbar overlays other content */
+  transition: left 0.5s ease-in-out; /* Add transition effect for left position */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  opacity: 0.9; /* Reduce opacity for a semi-transparent effect */
 }
 
 .vertical-navbar a {
+  padding: 10px 16px;
+  text-decoration: none;  
+  font-size: 18px;
+  color: #fff;
   display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: black;
+  transition: all 0.3s ease; /* Add transition effect for all properties */
 }
 
 .vertical-navbar a:hover {
-  background-color: #ddd;
+  background-color: #444; /* Darken background color on hover */
+  transform: translateX(5px); /* Move links slightly to the right on hover */
 }
 
-.content {
-  margin-left: 200px; /* Same as the width of the vertical navbar */
-  padding: 20px;
+.toggle-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px; /* Default left position */
+  z-index: 1000;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #ffffff;
+  transition: all 0.3s ease; /* Add transition effect for all properties */
+}
+
+.toggle-btn:hover {
+  transform: scale(1.1); /* Scale up on hover for a more impactful effect */
+}
+
+.toggle-btn:focus {
+  outline: none;
 }

@@ -7,43 +7,125 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .user-profile-container h1 {
   text-align: center;
   margin-bottom: 20px;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.profile-image {
+  text-align: center;
+  margin-bottom: 20px;
+  animation: bounceIn 0.5s ease-in-out;
+}
+
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .profile-details {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .profile-details p {
   font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-delete {
-  background-color: red;
-  color: white;
+.profile-details p:hover {
+  background-color: #d9d9d9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .profile-buttons {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  width: 100%;
   margin-top: 20px;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Add this to center the profile image and make it rounded */
-.profile-image {
-  text-align: center;
-  margin-bottom: 20px;
+.btn-delete,
+.btn-update {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: bounceIn 0.5s ease-in-out;
 }
 
-.profile-image img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+.btn-delete:hover,
+.btn-update:hover {
+  background-color: #0056b3;
+  animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

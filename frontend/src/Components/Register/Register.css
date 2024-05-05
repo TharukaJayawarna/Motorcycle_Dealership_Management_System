@@ -46,3 +46,8 @@
 .register-container form input[type="submit"]:hover {
   background-color: #0056b3;
 }
+
+.register-container form input[type="submit"]:active {
+  background-color: #004c8a;
+  transform: translateY(2px);
+}

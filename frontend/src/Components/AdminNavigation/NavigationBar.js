@@ -1,21 +1,41 @@
-// NavigationBar.js
-
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./NavigationBar.css";
+import { FaChevronLeft, FaChevronRight, FaHome, FaUserAlt, FaBoxOpen, FaListAlt, FaCommentAlt, FaExclamationTriangle } from "react-icons/fa"; // Importing more icons
 
 function NavigationBar() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
   return (
     <div>
-      <div className="vertical-navbar">
-        <Link to="/dashboard">Dashboard</Link>
-        <Link to="/userdetails">Users</Link>
-        <Link to="/inventory">Inventory</Link>
-        <Link to="/orderlist">Order List</Link>
-        <Link to="/notification">Notification</Link>
-        <Link to="/analyze_feedback">Analyze Feedback</Link>
-        <Link to="/analyze_complaints">Analyze Complaints</Link>
-      </div>
+      {isVisible && (
+        <div className="vertical-navbar">
+          <Link to="/AdminDashboard">
+            <FaHome /> Dashboard
+          </Link>
+          <Link to="/userdetails">
+            <FaUserAlt /> Users
+          </Link>
+          <Link to="/inventory">
+            <FaBoxOpen /> Inventory
+          </Link>
+          <Link to="/orderlist">
+            <FaListAlt /> Order List
+          </Link>
+          <Link to="/analyze_feedback">
+            <FaCommentAlt /> Analyze Feedback
+          </Link>
+          <Link to="/analyze_complaints">
+            <FaExclamationTriangle /> Analyze Complaints
+          </Link>
+        </div>
+      )}
+      <button className="toggle-btn" onClick={toggleVisibility}>
+        {isVisible ? <FaChevronLeft /> : <FaChevronRight />}
+      </button>
     </div>
   );
 }

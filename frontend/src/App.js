@@ -12,6 +12,7 @@ import ManagerDashboard from "./Components/ManagerDashboard/ManagerDashboard";
 import Profile from "./Components/Profile/Profile";
 import ResetPassword from "./Components/resetPassword/ResetPassword";
 import OTP from "./Components/resetPassword/OTP";
+import Admindashboard from "./Components/AdminDashboard/AdminDashboard"
 
 function App() {
   const ProtectedRoute = ({ children }) => {
@@ -53,6 +54,7 @@ function App() {
               </AdminRoute>
             }
           />
+          
           <Route path="/userdetails/:id" element={<UpdateUser />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/userdashboard" element={<UserDashboard />} />
@@ -60,6 +62,7 @@ function App() {
           <Route path="/managerdashboard" element={<ManagerDashboard />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/otp-sent/:email" element={<OTP />} />
+          <Route path="/AdminDashboard" element={<Admindashboard />} />
         </Routes>
       </BrowserRouter>
     </div>

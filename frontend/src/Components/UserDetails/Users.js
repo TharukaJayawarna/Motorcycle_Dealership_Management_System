@@ -76,7 +76,7 @@ function Users() {
       <Nav />
       <NavigationBar />
       <div className="container">
-        <h1>User Details Display Page</h1>
+        <h1>User Details </h1>
         <div className="search-container">
           <div>
             {" "}

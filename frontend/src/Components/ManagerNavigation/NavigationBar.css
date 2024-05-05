@@ -1,34 +1,24 @@
-/* NavigationBar.css */
+.vertical-navbar {
+  background-color: #333; /* dark gray background */
+  padding: 10px;
+  width: 200px; /* adjust the width as needed */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
-.upper-navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-  }
-  
-  .vertical-navbar {
-    width: 200px;
-    position: fixed;
-    left: 0;
-    top: 50px; /* Adjust according to your upper navbar height */
-    height: 100%;
-    background-color: #f2f2f2;
-    padding-top: 20px;
-  }
-  
-  .vertical-navbar a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .vertical-navbar a:hover {
-    background-color: #ddd;
-  }
-  
-  .content {
-    margin-left: 200px; /* Same as the width of the vertical navbar */
-    padding: 20px;
-  }
-  
+.vertical-navbar a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff; /* white text */
+  border-bottom: 1px solid #444; /* dark gray border */
+}
+
+.vertical-navbar a:hover {
+  background-color: #444; /* dark gray hover background */
+  color: #fff; /* white text on hover */
+}
+
+.vertical-navbar a:last-child {
+  border-bottom: none; /* remove border from last item */
+}

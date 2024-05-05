@@ -26,9 +26,11 @@ const registerUser = async (req, res) => {
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
+    const totalUsers = await User.countDocuments();
     res.status(200).json({
       status: "success",
       users: users,
+      totalUsers: totalUsers,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -90,6 +92,8 @@ const deleteUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+
 
 module.exports = {
   registerUser,
