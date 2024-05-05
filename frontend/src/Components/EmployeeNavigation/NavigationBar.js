@@ -9,7 +9,6 @@ function NavigationBar() {
     <div>
       <div className="vertical-navbar">
         <Link to="/dashboard">Dashboard</Link>
-        <Link to="/Notifications">Notifications </Link>
         <Link to="/AddComplaint">Add Complaint</Link>
         <Link to="/AnalyzeComplaints">Analyze Complaints</Link>
         <Link to="/Leave Request">Leave Request</Link>
