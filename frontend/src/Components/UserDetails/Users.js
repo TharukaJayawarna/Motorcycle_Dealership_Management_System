@@ -75,9 +75,9 @@ function Users() {
     <div>
       <Nav />
       <NavigationBar />
-      <div className="container">
+      <div className="authentication">
         <h1>User Details </h1>
-        <div className="search-container">
+        <div className="search-authentication">
           <div>
             {" "}
             <input
@@ -91,7 +91,7 @@ function Users() {
             <button onClick={handleSearch}>Search</button>
           </div>
         </div>
-        <div className="user-btn">
+        <div className="authentication-user-btn">
           <div>
             <Link to="/adduser">
               <button>Add User</button>
@@ -127,16 +127,16 @@ function Users() {
                     <td>{user.password}</td>
                     <td>{user.role}</td>
                     <td>
-                      <div className="table-btn">
-                        <div>
-                          <Link to={`/userdetails/${user._id}`}>Update</Link>
-                        </div>
-                        <div>
-                          <button onClick={() => deleteUser(user._id)}>
-                            Delete
-                          </button>
-                        </div>
-                      </div>
+                    <div className="authentication-table-btn">
+  <div className="authentication-user-btn">
+    <Link to={`/userdetails/${user._id}`}>Update</Link>
+  </div>
+  <div className="authentication-user-btn">
+    <button onClick={() => deleteUser(user._id)} className="delete">
+      Delete
+    </button>
+  </div>
+</div>
                     </td>
                   </tr>
                 ))}

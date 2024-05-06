@@ -43,10 +43,10 @@ const Nav = () => {
   };
 
   return (
-    <div className="nav-container">
+    <div className="authentication-nav-container">
       {isAuthenticated ? (
-        <nav class="navbar">
-          <div class="navbar-right">
+        <nav class="authentication-navbar">
+          <div class="authentication-navbar-right">
             <Link to={"/profile"}>
               <span style={{ marginRight: "20px" }} className="span-btn">
                 Profile
@@ -58,8 +58,8 @@ const Nav = () => {
           </div>
         </nav>
       ) : (
-        <nav class="navbar">
-          <div class="navbar-right">
+        <nav class="authentication-navbar">
+          <div class="authentication-navbar-right">
             <li className="home-ll">
               <Link to="/login" className="">
                 <h1>Login</h1>

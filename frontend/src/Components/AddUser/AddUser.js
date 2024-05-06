@@ -45,8 +45,8 @@ function AddUser() {
     <div>
       <Nav />
       <NavigationBar />
-      <div className="form-card">
-        <h1 className="header">Add User</h1>
+      <div className="authentication-form-card">
+        <h1 className="authentication-header">Add User</h1>
         <form onSubmit={handleSubmit}>
           <label>name</label>
           <br />

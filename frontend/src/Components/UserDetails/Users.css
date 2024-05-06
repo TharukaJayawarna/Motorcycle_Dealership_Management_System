@@ -1,7 +1,7 @@
 /* Users.css */
 
 /* Style for the Users component */
-.container {
+.authentication {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +36,7 @@ h1 {
   }
 }
 
-.search-container {
+.search-authentication {
   display: flex;
   flex-direction: row;
   align-items: center; /* Center items vertically */
@@ -256,14 +256,14 @@ button:hover {
   animation: pulse 0.5s ease-in-out;
 }
 
-.user-btn {
+.authentication-user-btn {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   animation: fadeIn 0.5s ease-in-out;
 }
 
-.table-btn {
+.authentication-table-btn {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -276,4 +276,30 @@ button:hover {
   height: 50px;
   border-radius: 50%;
   animation: bounceIn 0.5s ease-in-out;
+}
+/* Users.css */
+
+.authentication-table-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.authentication-user-btn button {
+  background-color: #808080; /* Gray background color for the buttons */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.authentication-user-btn button:hover {
+  background-color: #666; /* Darker gray on hover */
+}
+
+.authentication-user-btn button.delete {
+  background-color: #ff0000; /* Red background color for delete button */
 }

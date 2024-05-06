@@ -10,7 +10,7 @@ body {
 }
 
 /* Navbar styles */
-.navbar {
+.authentication-navbar {
   background-color: #333;
   color: #fff;
   display: flex;
@@ -19,13 +19,13 @@ body {
   padding: 20px;
 }
 
-.navbar-item {
+.authentication-navbar-item {
   color: #fff;
   text-decoration: none;
   margin-left: 15px;
 }
 
-.navbar-item:hover {
+.authentication-navbar-item:hover {
   text-decoration: underline;
 }
 

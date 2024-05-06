@@ -1,10 +1,10 @@
-.form-card {
+.authentication-form-card {
   margin-top: 50px;
   padding-left: 400px;
   padding-right: 100px;
 }
 
-.header {
+.authentication-header {
   padding: 10px;
   text-align: center;
   font-size: x-large;
@@ -14,7 +14,7 @@
   position: relative;
 }
 
-.avatar-container {
+.authentication-avatar-container {
   width: 120px;
   height: 120px;
   position: relative;
@@ -44,6 +44,6 @@
   transition: opacity 0.3s ease;
 }
 
-.avatar-container:hover .avatar-overlay {
+.authentication-avatar-container:hover .avatar-overlay {
   opacity: 1;
 }

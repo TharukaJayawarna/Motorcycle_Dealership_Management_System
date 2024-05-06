@@ -82,8 +82,8 @@ function UpdateUser() {
   return (
     <div>
       <Nav />
-      <div className="form-card">
-        <h1 className="header">Update User</h1>
+      <div className="authentication-form-card">
+        <h1 className="authentication-header">Update User</h1>
         <div className="mt-6 flex sm:flex-row justify-center">
           <label htmlFor="fileInput">
             <div className="profile-image">
@@ -96,7 +96,7 @@ function UpdateUser() {
                 onChange={handleFileChange}
                 required
               />
-              <div className="avatar-container">
+              <div className="authentication-avatar-container">
                 <img
                   className="avatar-image"
                   src={
