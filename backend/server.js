@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv").config();
-const UserRoutes = require("./routes/UserRoutes");
-const authRoutes = require("./routes/AuthRoutes");
+const UserRoutes = require("./routes/User_Profile_Management_UserRoutes");
+const authRoutes = require("./routes/User_Profile_Management_AuthRoutes");
 
 const app = express();
 const port = process.env.PORT || 5000;

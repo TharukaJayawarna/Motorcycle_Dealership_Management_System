@@ -1,5 +1,5 @@
-const User = require("../modules/UserModel");
-const Otp = require("../modules/OTPModal");
+const User = require("../modules/User_Profile_Management_UserModel");
+const Otp = require("../modules/User_Profile_Management_OTPModal");
 const sendEmail = require("../utils/sendEmail");
 const jwt = require("jsonwebtoken");
 

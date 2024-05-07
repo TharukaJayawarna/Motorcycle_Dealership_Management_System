@@ -1,4 +1,4 @@
-const User = require("../modules/UserModel");
+const User = require("../modules/User_Profile_Management_UserModel");
 
 //add a user
 const registerUser = async (req, res) => {

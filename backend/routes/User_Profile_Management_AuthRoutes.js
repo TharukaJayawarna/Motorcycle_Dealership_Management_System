@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const authController = require("../Controllers/AuthController");
+const authController = require("../controllers/User_Profile_Management_AuthController");
 
 router.route("/login").post(authController.loginUser);
 router.route("/reset-pass/:email").get(authController.sendTokenVerify);
