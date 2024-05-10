@@ -6,6 +6,9 @@ const mongoose = require("mongoose");
 const connectDB = require("./config/db");
 const dotenv = require("dotenv").config();
 
+const Promorouter = require("./routes/Promo_and_Notify_PromoRoutes");
+const NotificationRouter = require("./routes/Promo_and_Notify_notificationRoutes");
+
 
 const UserRoutes = require("./routes/User_Profile_Management_UserRoutes");
 const authRoutes = require("./routes/User_Profile_Management_AuthRoutes");
@@ -159,6 +162,9 @@ app.use(`/orders`, OrderRoutes);
 app.use(`/preorders`, PreOrderRoutes);
 app.use(`/reserves`, ReserveRoutes);
 app.use(express.static("uploads"));
+
+app.use("/promos", Promorouter);
+app.use("/mail", NotificationRouter);
 
 // Start the Server
 app.listen(port, () => console.log(`Server running on port ${port} 🔥`));
