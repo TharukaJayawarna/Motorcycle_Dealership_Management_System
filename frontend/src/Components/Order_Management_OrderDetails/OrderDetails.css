@@ -1,0 +1,85 @@
+.my-orders-container-wq {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.my-orders-heading-wq {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.search-container-wq {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.search-input-wq {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input-wq:focus {
+  border-color: #007bff;
+}
+
+.orders-table-wq {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.orders-table-wq th,
+.orders-table-wq td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.orders-table-wq th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.orders-table-wq tr:hover {
+  background-color: #f9f9f9;
+}
+
+.view-payment-slip-button-wq{
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.cancel-order-button-wq {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-payment-slip-button-wq:hover{
+  background-color: #0056b3;
+}
+.cancel-order-button-wq:hover {
+  background-color: #c82333;
+}
