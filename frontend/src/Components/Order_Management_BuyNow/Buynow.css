@@ -1,0 +1,176 @@
+.buy-now-container-om {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .buy-now-card-om {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+  }
+  
+  .buy-now-content-om {
+    flex: 1;
+    padding: 30px;
+  }
+  
+  .buy-now-heading-om {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .order-details-om {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .popup-content-om {
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin-left: 30px;
+  }
+  
+  .popup-heading-om {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .account-details-om,
+  .delivery-details-om {
+    margin-bottom: 20px;
+  }
+  
+  .account-heading-om,
+  .delivery-heading-om {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .order-form-om {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  
+  .form-group-om {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-label-om {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-input-om {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-actions-om {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .order-button-om,
+  .cancel-button-om {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .order-button-om {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .cancel-button-om {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .success-message-om,
+  .error-message-om {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .success-message-om {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .error-message-om {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  .popup-content-om {
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin-left: 30px;
+  }
+  
+  .popup-header-om {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .popup-heading-om {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .popup-body-om {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .account-details-om,
+  .delivery-details-om {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .account-header-om,
+  .delivery-header-om {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .account-heading-om,
+  .delivery-heading-om {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .account-info-om,
+  .delivery-info-om {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .account-info-om p,
+  .delivery-info-om p {
+    margin-bottom: 5px;
+  }

@@ -1,0 +1,121 @@
+/* IM_Home_navbar.css */
+
+.IM_Home_header {
+  
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.IM_Home_logo img {
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+}
+
+.IM_Home_nav-bar ul {
+  list-style-type: none;
+  margin-left: 70px;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.IM_Home_nav-bar li {
+  margin-right: 25px;
+}
+
+.IM_Home_nav-bar a {
+  text-decoration: none;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  position: relative;
+  font-size: large;
+}
+
+.IM_Home_nav-bar a:hover {
+  color: lightblue;
+  
+}
+
+.IM_Home_icons i {
+  margin-left: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Dropdown styles */
+.IM_dropdown {
+  position: relative;
+}
+
+.IM_dropdown .IM_dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 18px; /* Set the font size to match the navigation links */
+}
+
+.IM_dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.IM_dropdown-content a {
+  color: black;
+  font-size: medium;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.IM_dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.IM_dropdown:hover .IM_dropdown-content {
+  display: block;
+}
+
+.IM_dropdown-content a:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.IM_dropdown-content a:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.om-cart-btn{
+  margin-left: 400px;
+
+}
+.IM_profile {
+  float: right;
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.IM_profile a {
+  color: white; 
+  text-decoration: none;
+}
+
+.IM_profile a:hover {
+  color: lightblue; /* Set the color for the profile link on hover */
+}
+

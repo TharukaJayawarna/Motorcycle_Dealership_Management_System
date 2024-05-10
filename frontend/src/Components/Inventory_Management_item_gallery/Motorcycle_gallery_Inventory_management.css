@@ -1,0 +1,148 @@
+.gallery-image {
+    width: 90%; 
+    height: 300px; 
+    display: block; 
+    margin: 10px auto; 
+  }
+  
+ .gallery-h2{
+    margin-left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.gallery-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 80%;
+  height: 150px;
+}
+
+.gallery-item-details {
+  padding: 10px;
+}
+
+.gallery-p{
+  text-align: center;
+  font-family:sans-serif;
+  margin: 5px 0;
+}
+
+.gallery-search-bar input {
+ margin-left: 350px;
+  width:50%;
+  height: 50px;
+  border: 1px solid #413c3c; 
+  border-radius: 5px; 
+}
+
+.gallery-search-bar button {
+  padding: 5px 10px;
+  background-color: rgb(0, 0, 0);
+  height: 40px;
+  margin-left: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white; 
+}
+
+.gallery-search-bar button:hover { 
+  background-color: rgb(88, 104, 118); 
+}
+
+.gallery-h1{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 650px;
+}
+
+.gallery-button {
+  background-color: black;
+  color: white;
+  font-size: medium;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 70px;
+  margin-bottom: 10px;
+}
+
+.gallery-button:hover {
+  background-color: #333; 
+}
+
+ .gallery-button1 {
+  
+  font-size: medium;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-bottom: 10px;
+} 
+
+.in-stock {
+  color: green; 
+  text-align: center;
+}
+
+.out-of-stock {
+  color: red; 
+  text-align: center;
+}
+.category-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.category-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.category-buttons-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.category-button {
+  background-color: #f1f1f1;
+  border: none;
+  color: #333;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.category-button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.category-button:hover {
+  background-color: #ddd;
+}

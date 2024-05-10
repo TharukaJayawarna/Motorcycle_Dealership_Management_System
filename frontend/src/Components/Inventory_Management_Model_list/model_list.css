@@ -1,0 +1,19 @@
+.IM-add-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .IM-add-button svg {
+    margin-right: 5px; 
+  }
+  .restock-alert {
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 5px;
+  }
