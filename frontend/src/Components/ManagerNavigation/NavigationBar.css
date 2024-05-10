@@ -1,0 +1,24 @@
+.vertical-navbar {
+  background-color: #333; /* dark gray background */
+  padding: 10px;
+  width: 200px; /* adjust the width as needed */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.vertical-navbar a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff; /* white text */
+  border-bottom: 1px solid #444; /* dark gray border */
+}
+
+.vertical-navbar a:hover {
+  background-color: #444; /* dark gray hover background */
+  color: #fff; /* white text on hover */
+}
+
+.vertical-navbar a:last-child {
+  border-bottom: none; /* remove border from last item */
+}
