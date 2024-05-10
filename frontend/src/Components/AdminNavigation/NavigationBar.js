@@ -19,10 +19,10 @@ function NavigationBar() {
           <Link to="/userdetails">
             <FaUserAlt /> Users
           </Link>
-          <Link to="/inventory">
+          <Link to="/inventorydash">
             <FaBoxOpen /> Inventory
           </Link>
-          <Link to="/orderlist">
+          <Link to="/orderdash">
             <FaListAlt /> Order List
           </Link>
           <Link to="/analyze_feedback">
