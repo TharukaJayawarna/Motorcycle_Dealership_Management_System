@@ -12,7 +12,7 @@ function NavigationBar() {
         <Link to="/ViewRequest ">View Request </Link>
         <Link to="/AnalyzeFeedbackAndComplaints ">Analyze Feedback And Complaints </Link>
         <Link to="/FinancialManagement">Financial Management</Link>
-        <Link to="/notification">Notification and Promotion</Link>
+        <Link to="/mainhome">Notification and Promotion</Link>
         
         
       </div>

@@ -6,6 +6,9 @@ const mongoose = require("mongoose");
 const connectDB = require("./config/db");
 const dotenv = require("dotenv").config();
 
+const Promorouter = require("./routes/Promo_and_Notify_PromoRoutes");
+const NotificationRouter = require("./routes/Promo_and_Notify_notificationRoutes");
+
 
 const UserRoutes = require("./routes/User_Profile_Management_UserRoutes");
 const authRoutes = require("./routes/User_Profile_Management_AuthRoutes");
@@ -15,6 +18,10 @@ const CartRoutes = require("./routes/CartRoutes");
 const OrderRoutes = require("./routes/OrderRoutes");
 const PreOrderRoutes = require("./routes/PreOrderRoutes");
 const ReserveRoutes = require("./routes/ReserveRoutes");
+
+const userRoutes = require("./routes/userRoutes");
+const appointmentRoutes = require("./routes/appointmentRoutes");
+const serviceRoutes = require("./routes/serviceRoutes");
 
 const app = express();
 const port = process.env.PORT || 8070;
@@ -152,6 +159,9 @@ app.use(express.urlencoded({ extended: true }));
 const baseURL = "/api/v1";
 app.use(`${baseURL}/user`, UserRoutes);
 app.use(`${baseURL}/auth`, authRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/appointments", appointmentRoutes);
+app.use("/api/services", serviceRoutes);
 app.use(`/items`, ItemRoute);
 app.use(`/bikes`, BikeRoute);
 app.use(`/carts`, CartRoutes);
@@ -159,6 +169,9 @@ app.use(`/orders`, OrderRoutes);
 app.use(`/preorders`, PreOrderRoutes);
 app.use(`/reserves`, ReserveRoutes);
 app.use(express.static("uploads"));
+
+app.use("/promos", Promorouter);
+app.use("/mail", NotificationRouter);
 
 // Start the Server
 app.listen(port, () => console.log(`Server running on port ${port} 🔥`));
