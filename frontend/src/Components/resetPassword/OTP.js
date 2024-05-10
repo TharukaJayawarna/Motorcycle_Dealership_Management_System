@@ -21,7 +21,7 @@ const OTP = () => {
     }
 
     try {
-      await axios.post(`http://localhost:5000/api/v1/auth/reset-pass/otp`, {
+      await axios.post(`http://localhost:8070/api/v1/auth/reset-pass/otp`, {
         otp,
         email,
       });

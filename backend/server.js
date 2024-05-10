@@ -5,7 +5,7 @@ const UserRoutes = require("./routes/User_Profile_Management_UserRoutes");
 const authRoutes = require("./routes/User_Profile_Management_AuthRoutes");
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8070;
 
 // Middleware
 app.use(cors());

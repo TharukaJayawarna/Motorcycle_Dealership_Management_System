@@ -17,7 +17,7 @@ function UpdateUser() {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/v1/user/${id}`
+          `http://localhost:8070/api/v1/user/${id}`
         );
         const user = response.data.message; // Assuming response structure
         setInputs(user);
@@ -39,7 +39,7 @@ function UpdateUser() {
     }
     console.log("uploadImg", uploadImg);
     try {
-      await axios.patch(`http://localhost:5000/api/v1/user/${id}`, {
+      await axios.patch(`http://localhost:8070/api/v1/user/${id}`, {
         name: inputs.name,
         password: inputs.password,
         role: inputs.role,

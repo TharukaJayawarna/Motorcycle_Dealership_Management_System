@@ -17,7 +17,7 @@ function AdminDashboard() {
 
   const fetchData = async () => {
     try {
-      const usersResponse = await axios.get("http://localhost:4000/user/");
+      const usersResponse = await axios.get("http://localhost:8070/user/");
       const users = usersResponse.data.users;
       setTotalUsers(users.length);
 

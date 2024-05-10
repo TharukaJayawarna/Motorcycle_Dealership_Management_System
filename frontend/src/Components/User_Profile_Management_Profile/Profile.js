@@ -14,7 +14,7 @@ const Profile = () => {
       try {
         const token = localStorage.getItem("jsonwebtoken");
         const response = await axios.get(
-          "http://localhost:5000/api/v1/auth/current-user",
+          "http://localhost:8070/api/v1/auth/current-user",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -47,8 +47,8 @@ const Profile = () => {
       });
 
       if (confirmation.isConfirmed) {
-        await axios.delete(`http://localhost:5000/api/v1/user/${userData._id}`);
-        await axios.get("http://localhost:5000/api/v1/auth/logout");
+        await axios.delete(`http://localhost:8070/api/v1/user/${userData._id}`);
+        await axios.get("http://localhost:8070/api/v1/auth/logout");
         localStorage.removeItem("jsonwebtoken");
         localStorage.removeItem("role");
         Swal.fire(

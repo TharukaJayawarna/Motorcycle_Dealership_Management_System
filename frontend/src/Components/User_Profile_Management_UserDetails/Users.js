@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import Swal from "sweetalert2";
 
-const URL = "http://localhost:5000/api/v1/user/";
+const URL = "http://localhost:8070/api/v1/user/";
 
 const fetchHandler = async () => {
   try {
@@ -61,7 +61,7 @@ function Users() {
 
     if (confirmation.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5000/api/v1/user/${id}`);
+        await axios.delete(`http://localhost:8070/api/v1/user/${id}`);
         setUsers(users.filter((user) => user._id !== id));
         Swal.fire("Deleted!", "User has been deleted.", "success");
       } catch (error) {

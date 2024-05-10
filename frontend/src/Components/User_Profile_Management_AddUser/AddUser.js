@@ -29,7 +29,7 @@ function AddUser() {
 
   const sendRequest = async () => {
     try {
-      await axios.post("http://localhost:5000/api/v1/user/", {
+      await axios.post("http://localhost:8070/api/v1/user/", {
         name: inputs.name,
         email: inputs.email,
         password: inputs.password,

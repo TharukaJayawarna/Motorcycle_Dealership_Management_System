@@ -20,7 +20,7 @@ const ResetPassword = () => {
     }
 
     try {
-      await axios.get(`http://localhost:5000/api/v1/auth/reset-pass/${email}`);
+      await axios.get(`http://localhost:8070/api/v1/auth/reset-pass/${email}`);
       Swal.fire(
         "Success!",
         "A password reset OTP Code has been sent to your email address.",
