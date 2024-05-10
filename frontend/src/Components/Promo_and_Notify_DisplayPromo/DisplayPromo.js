@@ -18,6 +18,7 @@ const DisplayPromo = () => {
 
   return (
     <div>
+      
        <br/>
       <h1 className="unique-heading">Display Promotions Page</h1>
       <br/>

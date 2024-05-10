@@ -9,6 +9,10 @@
   transition: all 0.3s ease; /* Smooth transition for form */
 }
 
+.uni03-button {
+  background-color: #0b0c01;
+}
+
  .unique-label{
   font-weight: bold;
 }
@@ -39,11 +43,11 @@ input[type="date"] {
   width: 230px;
   height: 230px;
   border-radius: 10%;
-  transition: transform 0.3s ease; /* Smooth scale transition */
+  /*transition: transform 0.3s ease; /* Smooth scale transition */
 }
 
 .profile-image img:hover {
-  transform: scale(1.1); /* Scale up on hover */
+ /* transform: scale(1.1); /* Scale up on hover */
 }
 
 .avatar-container {
@@ -56,7 +60,7 @@ input[type="date"] {
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  transition: all 0.3s ease; /* Smooth transition for avatar image */
+  /*transition: all 0.3s ease; /* Smooth transition for avatar image */
 }
 
 .avatar-overlay {
@@ -69,7 +73,7 @@ input[type="date"] {
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth color transition */
+  /*transition: background-color 0.3s ease; /* Smooth color transition */
 }
 
 .avatar-overlay:hover {

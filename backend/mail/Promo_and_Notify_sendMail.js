@@ -14,7 +14,7 @@ const SendEmail = async (email, subject, text) => {
     await transporter.sendMail({
       from: "itpproject2080@gmail.com",
       to: email,
-      subject: subject,
+      subject: "Jayawarna Auto PVT Limited",
       text: text,
     });
     console.log("Email Sent Successfully");

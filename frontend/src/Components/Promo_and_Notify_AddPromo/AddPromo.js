@@ -123,7 +123,7 @@ function AddPromo() {
       </form>
       <br/>
 
-      <button className="unique-button">
+      <button className="uni03-button">
         <Link to={`/promodetails/`}>Promo Details</Link>
       </button>
     </div>

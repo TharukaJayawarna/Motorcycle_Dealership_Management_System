@@ -76,8 +76,8 @@ function Promos() {
       
       
       <div className="unique-button-group">
-        <button className="unique-search-button">
-          <Link to="/addpromo">Go Back</Link>
+        <button className="uni03-button">
+          <Link to="/addpromo">Add Promo</Link>
         </button>
         <button onClick={handlePrint} className="unique-button">
           Download Report

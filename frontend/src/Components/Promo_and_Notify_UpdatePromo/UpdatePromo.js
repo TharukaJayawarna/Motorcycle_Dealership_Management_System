@@ -127,7 +127,7 @@ function UpdatePromo() {
         
         <button  className="unique-button" type="submit">Submit</button>
       </form><br /><br />
-      <button  className="unique-button" ><Link to="/promodetails">Go Back</Link></button>
+      <button  className="uni03-button" ><Link to="/promodetails">Go Back</Link></button>
     </div>
   );
 
