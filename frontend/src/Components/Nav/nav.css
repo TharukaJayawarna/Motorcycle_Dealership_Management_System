@@ -1,0 +1,58 @@
+/* nav.css */
+
+/* Navigation styling */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content:flex-end;
+  background-color: #8e8d8d;
+  width: 101%; /* Set the width of the navigation bar */
+  height: 70px; 
+}
+
+li {
+  margin: 0;
+}
+
+/* List item styling */
+.home-li {
+  padding: 5px 20px;
+}
+
+/* Link styling */
+.home-a {
+  text-decoration: none;
+  color: white;
+}
+
+.home-a:hover {
+  text-decoration: underline;
+}
+
+/* Active link styling */
+.active {
+  background-color: #007bff;
+}
+
+.active:hover {
+  background-color: #0056b3;
+}
+
+/* Heading styling */
+h1 {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  ul {
+    flex-direction: column;
+  }
+
+  .home-li {
+    padding: 10px;
+  }
+}
