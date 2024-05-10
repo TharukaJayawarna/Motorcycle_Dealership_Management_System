@@ -1,0 +1,25 @@
+.alert-box {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  
+  .alert-box.success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .alert-box.info {
+    background-color: #cce5ff;
+    color: #004085;
+  }
+  
+  .alert-box.warning {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .alert-box.error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }

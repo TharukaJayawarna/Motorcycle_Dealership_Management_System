@@ -4,11 +4,11 @@ import NavigationBar from '../ManagerNavigation/NavigationBar';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
-function Home() {
+function Home1() {
   return (
     <div>
-      <Nav />
-      <NavigationBar />
+      {/* <Nav /> */}
+      {/* <NavigationBar /> */}
       <br /><br />
       <h1 className="unique-heading">Promo & Notification Home</h1>
       <br /> <br />
@@ -25,4 +25,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home1;

@@ -1,58 +1,41 @@
-/* nav.css */
-
-/* Navigation styling */
-ul {
-  list-style-type: none;
+/* Resetting some default styles */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar styles */
+.authentication-navbar {
+  background-color: #333;
+  color: #fff;
   display: flex;
-  justify-content:flex-end;
-  background-color: #8e8d8d;
-  width: 101%; /* Set the width of the navigation bar */
-  height: 70px; 
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
 }
 
-li {
-  margin: 0;
-}
-
-/* List item styling */
-.home-li {
-  padding: 5px 20px;
-}
-
-/* Link styling */
-.home-a {
+.authentication-navbar-item {
+  color: #fff;
   text-decoration: none;
-  color: white;
+  margin-left: 15px;
 }
 
-.home-a:hover {
+.authentication-navbar-item:hover {
   text-decoration: underline;
 }
 
-/* Active link styling */
-.active {
-  background-color: #007bff;
+.home-ll {
+  margin-right: 10px;
+  text-decoration: none;
+  color: white;
 }
-
-.active:hover {
-  background-color: #0056b3;
-}
-
-/* Heading styling */
-h1 {
-  margin: 0;
-  font-size: 15px;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  ul {
-    flex-direction: column;
-  }
-
-  .home-li {
-    padding: 10px;
-  }
+.span-btn {
+  background-color: #333;
+  color: white;
+  cursor: pointer;
 }

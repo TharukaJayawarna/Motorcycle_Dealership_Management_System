@@ -44,8 +44,8 @@ function Promos() {
 
   return (
     <div>
-      <Nav />
-      <NavigationBar />
+      {/* <Nav /> */}
+      {/* <NavigationBar /> */}
       <h1 className="unique-heading">Promo Details Display page</h1>
       <div className="unique-search-container">
         <input

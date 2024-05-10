@@ -1,15 +1,16 @@
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCOnS3ZbFDPyOl9v-HvDEuar6tejL63rXk",
-    authDomain: "promo-dc796.firebaseapp.com",
-    projectId: "promo-dc796",
-    storageBucket: "promo-dc796.appspot.com",
-    messagingSenderId: "877158017960",
-    appId: "1:877158017960:web:ac2a2fae7191e79cad8b9d"
-  };
-
+  apiKey: "AIzaSyCvr3zvyy8cr_PRT0lO0MaGKyKiFUfzr24",
+  authDomain: "user-profile-4ffed.firebaseapp.com",
+  projectId: "user-profile-4ffed",
+  storageBucket: "user-profile-4ffed.appspot.com",
+  messagingSenderId: "188540444659",
+  appId: "1:188540444659:web:b6dae07dd72bde567c7c86"
+};
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
+

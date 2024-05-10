@@ -1,0 +1,106 @@
+.IM-inventory-heading {
+  font-family: "Montserrat", sans-serif;
+  margin-left: 550px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+.IM-table {
+  border-collapse: collapse;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.IM-table th,
+.IM-table td {
+  margin-right: 8px;
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.IM-table th {
+  background-color: #f2f2f2;
+}
+
+.IM-search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 500px;
+}
+
+.IM-search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+  width: 300px;
+}
+
+.IM-search-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.IM-search-button:hover {
+  background-color: #0056b3;
+}
+
+.IM-custom-button {
+  background-color: black;
+  color: white;
+  font-size: medium;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.IM-custom-button:hover {
+  background-color: #333;
+}
+
+.IM-subheading{
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 550px;
+  margin-top: 5px;
+  font-size: 18px; 
+  font-weight: bold; 
+  color: #333;
+}
+.IM-add-button {
+  position: absolute;
+  top: 50px;
+  right: 60px;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.IM-add-button svg {
+  margin-right: 5px; 
+}
+.IM-custom-button2 {
+  background-color: black;
+  color: white;
+  font-size: medium;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.IM-custom-button2:hover {
+  background-color: #333;
+}

@@ -5,7 +5,7 @@ const uploadFileToFirebase = async (file) => {
   try {
     const timestamp = Date.now();
     const filename = `${file.name}_${timestamp}`;
-    const imageRef = ref(storage, `promo/${file.name + filename}`);
+    const imageRef = ref(storage, `user/${file.name + filename}`);
 
     // Upload the file
     const snapshot = await uploadBytes(imageRef, file);

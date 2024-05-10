@@ -1,0 +1,26 @@
+.details-container {
+    margin-top: 20px;
+  }
+  
+  .details-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .details-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .details-item {
+    margin-bottom: 10px;
+  }
+  
+  .details-item-id {
+    font-weight: bold;
+  }
+  
+  .details-item-name {
+    margin-left: 10px;
+  }

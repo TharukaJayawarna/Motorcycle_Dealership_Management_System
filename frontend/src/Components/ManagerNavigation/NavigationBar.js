@@ -1,4 +1,3 @@
-
 // NavigationBar.js
 
 import React from "react";
@@ -13,8 +12,8 @@ function NavigationBar() {
         <Link to="/ViewRequest ">View Request </Link>
         <Link to="/AnalyzeFeedbackAndComplaints ">Analyze Feedback And Complaints </Link>
         <Link to="/FinancialManagement">Financial Management</Link>
-        <Link to="/notification">Notification</Link>
-        <Link to="/Promotion">Promotion</Link>
+        <Link to="/mainhome">Notification and Promotion</Link>
+        
         
       </div>
     </div>
