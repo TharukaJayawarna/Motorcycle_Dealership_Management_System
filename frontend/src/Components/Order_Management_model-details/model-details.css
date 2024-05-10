@@ -1,0 +1,148 @@
+.om-bike-details-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-bottom: 100px; 
+}
+
+.om-bike-details-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.om-bike-details-card-img {
+  max-width:400px;
+  height: 400px;
+  border-radius: 8px;
+}
+
+.om-bike-details-card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.om-bike-details-card-info {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.om-bike-details-card-info p {
+  margin-bottom: 0.5rem;
+}
+
+.om-bike-details-card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.om-bike-details-card-btn {
+  font-size: 1.2rem;
+  padding: 0.8rem 1.6rem;
+}
+
+@media (max-width: 767px) {
+  .om-bike-details-card {
+    padding: 1.5rem;
+  }
+
+  .om-bike-details-card-title {
+    font-size: 1.8rem;
+  }
+
+  .om-bike-details-card-info {
+    font-size: 1rem;
+  }
+
+  .om-bike-details-card-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* model-details.css */
+
+/* Button Styles */
+.om-bike-details-card-btn {
+  font-size: 1.2rem;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.btn-success {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #45a049; /* Darker Green */
+}
+
+.btn-warning {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+.btn-warning:hover {
+  background-color: #d32f2f; /* Darker Red */
+}
+
+.btn-secondary {
+  background-color: #757575; /* Grey */
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #616161; /* Darker Grey */
+}
+
+/* Font Styles */
+.om-bike-details-card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.om-bike-details-card-info {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.text-danger {
+  color: #f44336; /* Red */
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .om-bike-details-card {
+    padding: 1.5rem;
+  }
+
+  .om-bike-details-card-title {
+    font-size: 1.8rem;
+  }
+
+  .om-bike-details-card-info {
+    font-size: 1rem;
+  }
+
+  .om-bike-details-card-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
