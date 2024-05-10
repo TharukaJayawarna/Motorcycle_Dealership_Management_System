@@ -1,44 +1,39 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const cors = require("cors");
 const bodyParser = require("body-parser");
-const router = require("./routes/ItemRoute");
-const router2 = require("./routes/BikeRoute");
-const router3 = require("./routes/CartRoutes");
-const router4 = require("./routes/OrderRoutes");
-const router5 = require("./routes/PreOrderRoutes");
-const router6 = require("./routes/ReserveRoutes");
+const multer = require("multer");
+const mongoose = require("mongoose");
+const connectDB = require("./config/db");
+const dotenv = require("dotenv").config();
+
+
+const UserRoutes = require("./routes/User_Profile_Management_UserRoutes");
+const authRoutes = require("./routes/User_Profile_Management_AuthRoutes");
+const ItemRoute = require("./routes/ItemRoute");
+const BikeRoute = require("./routes/BikeRoute");
+const CartRoutes = require("./routes/CartRoutes");
+const OrderRoutes = require("./routes/OrderRoutes");
+const PreOrderRoutes = require("./routes/PreOrderRoutes");
+const ReserveRoutes = require("./routes/ReserveRoutes");
 
 const app = express();
-const cors = require("cors");
-const multer = require("multer");
+const port = process.env.PORT || 8070;
 
-app.use(express.json());
+// Middleware
 app.use(cors());
-app.use("/items", router);
-app.use("/bikes", router2);
-app.use("/carts", router3);
-app.use("/orders", router4);
-app.use("/preorders", router5);
-app.use("/reserves", router6);
-app.use(express.static('uploads'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
+// Database Connection
+connectDB();
 
-mongoose
-  .connect(
-    "mongodb+srv://itpproject2080:2080@mdms.7ckq38t.mongodb.net/Inventory_management?retryWrites=true&w=majority&appName=MDMS"
-  )
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.log(err));
+// Database Models
+const ItemModel = require("./modules/ItemModels");
+const BikeModel = require("./modules/BikeModel");
+const CartModel = require("./modules/CartModels");
 
-require("./modules/ItemModels");
-const itemSchema = mongoose.model("ItemModels");
-
-
-const PORT = process.env.PORT || 8070;
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
-const multerimg = require("multer");
-
-const storageimg = multer.diskStorage({
+// Multer configuration for item images
+const storageItem = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "uploads/");
   },
@@ -48,9 +43,23 @@ const storageimg = multer.diskStorage({
   },
 });
 
-const uploadimg = multerimg({ storage: storageimg });
+const uploadItem = multer({ storage: storageItem });
 
-app.post("/additem", uploadimg.single("image"), async (req, res) => {
+// Multer configuration for bike images
+const storageBike = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now();
+    cb(null, uniqueSuffix + file.originalname);
+  },
+});
+
+const uploadBike = multer({ storage: storageBike });
+
+// Add Item Route
+app.post("/additem", uploadItem.single("image"), async (req, res) => {
   const {
     Item_ID,
     Item_Name,
@@ -63,7 +72,7 @@ app.post("/additem", uploadimg.single("image"), async (req, res) => {
   const imageName = req.file.filename;
 
   try {
-    await itemSchema.create({
+    await ItemModel.create({
       Item_ID,
       Item_Name,
       Price,
@@ -75,35 +84,19 @@ app.post("/additem", uploadimg.single("image"), async (req, res) => {
       Image: imageName,
     });
 
-    res.status(200).json({ status: "Success" }); 
+    res.status(200).json({ status: "Success" });
   } catch (error) {
-    res.status(500).json({ status: "Error" }); 
+    res.status(500).json({ status: "Error" });
   }
 });
 
-require("./modules/BikeModel");
-const bikeSchema = mongoose.model("BikeModel");
-
-const multerimg1 = require("multer");
-
-const storageimg1 = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/");
-  },
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now();
-    cb(null, uniqueSuffix + file.originalname);
-  },
-});
-
-const uploadimg1 = multerimg1({ storage: storageimg1 });
-
-app.post("/addmodel", uploadimg1.single("image"), async (req, res) => {
+// Add Bike Model Route
+app.post("/addmodel", uploadBike.single("image"), async (req, res) => {
   const { Bike_ID, Bike_Name, Price, Description, Colour, Received } = req.body;
   const imageName = req.file.filename;
 
   try {
-    await bikeSchema.create({
+    await BikeModel.create({
       Bike_ID,
       Bike_Name,
       Price,
@@ -116,13 +109,14 @@ app.post("/addmodel", uploadimg1.single("image"), async (req, res) => {
 
     res.status(200).json({ status: "Success" });
   } catch (error) {
-    res.status(500).json({ status: "Error" }); 
+    res.status(500).json({ status: "Error" });
   }
 });
 
+// View Bike Model List Route
 app.get("/viewmodellist", async (req, res) => {
   try {
-    const data = await bikeSchema.find({});
+    const data = await BikeModel.find({});
     res.send({ status: 200, data: data });
   } catch (err) {
     console.log(err);
@@ -130,21 +124,41 @@ app.get("/viewmodellist", async (req, res) => {
   }
 });
 
-const CartModel = require('./modules/CartModels');
-app.post('/webhook/order-create', async (req, res) => {
-  const order = req.body; 
-  const itemIdsToRemove = order.line_items.map(item => item.id); 
+// Webhook for Order Creation
+app.post("/webhook/order-create", async (req, res) => {
+  const order = req.body;
+  const itemIdsToRemove = order.line_items.map((item) => item.id);
 
   try {
-    await Promise.all(itemIdsToRemove.map(async (itemId) => {
-      await CartModel.deleteOne({ _id: itemId });
-    }));
+    await Promise.all(
+      itemIdsToRemove.map(async (itemId) => {
+        await CartModel.deleteOne({ _id: itemId });
+      })
+    );
 
-    res.status(200).send('Cart updated successfully');
+    res.status(200).send("Cart updated successfully");
   } catch (error) {
-    console.error('Error removing items from cart:', error);
-    res.status(500).send('Error removing items from cart');
+    console.error("Error removing items from cart:", error);
+    res.status(500).send("Error removing items from cart");
   }
 });
 
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
+// Routes
+const baseURL = "/api/v1";
+app.use(`${baseURL}/user`, UserRoutes);
+app.use(`${baseURL}/auth`, authRoutes);
+app.use(`/items`, ItemRoute);
+app.use(`/bikes`, BikeRoute);
+app.use(`/carts`, CartRoutes);
+app.use(`/orders`, OrderRoutes);
+app.use(`/preorders`, PreOrderRoutes);
+app.use(`/reserves`, ReserveRoutes);
+app.use(express.static("uploads"));
+
+// Start the Server
+app.listen(port, () => console.log(`Server running on port ${port} 🔥`));

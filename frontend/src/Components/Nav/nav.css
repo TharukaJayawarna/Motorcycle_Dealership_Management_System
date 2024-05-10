@@ -1,0 +1,41 @@
+/* Resetting some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar styles */
+.authentication-navbar {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+}
+
+.authentication-navbar-item {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.authentication-navbar-item:hover {
+  text-decoration: underline;
+}
+
+.home-ll {
+  margin-right: 10px;
+  text-decoration: none;
+  color: white;
+}
+.span-btn {
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}

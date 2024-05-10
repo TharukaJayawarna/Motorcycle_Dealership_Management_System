@@ -1,7 +1,20 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
+import Home from "./Components/User_Profile_Management_Home/Home";
+import Login from "./Components/User_Profile_Management_Login/Login";
+import Register from "./Components/User_Profile_Management_Register/Register";
+import AddUser from "./Components/User_Profile_Management_AddUser/AddUser";
+import Users from "./Components/User_Profile_Management_UserDetails/Users";
+import UpdateUser from "./Components/User_Profile_Management_UpdateUser/UpdateUser";
+import UserDashboard from "./Components/UserDashboard/UserDashboard";
+import EmployeeDahsboard from "./Components/EmployeeDashboard/EmployeeDahsboard";
+import ManagerDashboard from "./Components/ManagerDashboard/ManagerDashboard";
+import Profile from "./Components/User_Profile_Management_Profile/Profile";
+import ResetPassword from "./Components/resetPassword/ResetPassword";
+import OTP from "./Components/resetPassword/OTP";
+import Admindashboard from "./Components/AdminDashboard/AdminDashboard"
+
 import InventoryDashboard from './Components/Inventory_Management_Inventory_dashboard/Inventory_dashboard';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Add_Item from './Components/Inventory_Management_Add_Item_Inventory management/Add_Item';
 import Item_list from './Components/Inventory_Management_Item_list/Item_list';
 import Add_model from './Components/Inventory_Management_Add_model_Inventory management/Add_model';
@@ -9,7 +22,6 @@ import Model_list from './Components/Inventory_Management_Model_list/Model_list'
 import Report from './Components/Inventory_Management_Report/report';
 import Update_item from './Components/Inventory_Management_Update_item/Update_item';
 import Update_model from './Components/Inventory_Management_Update_model/Update_model';
-
 
 import Gallery from './Components/Inventory_Management_Gallery/Gallery';
 import Motorcycle_gallery_Inventory_management from './Components/Inventory_Management_item_gallery/Motorcycle_gallery_Inventory_management';
@@ -25,7 +37,7 @@ import BikeDetails from './Components/Order_Management_model-details/model-detai
 import PreOrder from './Components/Order_Management_preorder/preorder';
 import Reserve from './Components/Order_Management_reserve/reserve';
 
-import Home from './Components/Inventory_Management_home-main/home-main';
+// import Home from './Components/Inventory_Management_home-main/home-main';
 import OrderDashboard from './Components/Order_Management_OrderDashboard/OrderDashboard';
 import OrderDetails from './Components/Order_Management_OrderDetails/OrderDetails';
 import ReservationDetailsPage from './Components/Order_Management_reservationdetails/reservationdetails';
@@ -35,12 +47,59 @@ import UserReservationDetailsPage from './Components/Order_Management_myreservat
 import ReportPage from './Components/Order_Management_orderreport/orderreport';
 
 
+
 function App() {
+  const ProtectedRoute = ({ children }) => {
+    const isAuthenticated = localStorage.getItem("jsonwebtoken") ? true : false;
+
+    if (!isAuthenticated) {
+      return <Navigate to="/login" />;
+    }
+    return children;
+  };
+  const AdminRoute = ({ children }) => {
+    const role = localStorage.getItem("role");
+    if (role !== "Admin") {
+      return <Navigate to="/" />;
+    }
+    return children;
+  };
+
   return (
     <div>
-     
-     <React.Fragment>
-      <Routes>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/adduser"
+            element={
+              <AdminRoute>
+                <AddUser />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="/userdetails"
+            element={
+              <AdminRoute>
+                <Users />
+              </AdminRoute>
+            }
+          />
+          
+          <Route path="/userdetails/:id" element={<UpdateUser />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/userdashboard" element={<UserDashboard />} />
+          <Route path="/employeedashboard" element={<EmployeeDahsboard />} />
+          <Route path="/managerdashboard" element={<ManagerDashboard />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/otp-sent/:email" element={<OTP />} />
+          <Route path="/AdminDashboard" element={<Admindashboard />} />
+        </Routes>
+
+        <Routes>
       <Route path="/inventorydash" element={<InventoryDashboard/>}/>
       <Route path="/additem" element={<Add_Item/>}/>
       <Route path="/viewitemlist" element={<Item_list/>}/>
@@ -73,8 +132,8 @@ function App() {
     <Route path="/orderreport" element={<ReportPage />}/>
 
       </Routes>
-     </React.Fragment>
-     
+
+      </BrowserRouter>
     </div>
   );
 }
