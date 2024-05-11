@@ -1,19 +1,19 @@
 import React from "react";
 import { Route, Routes } from "react-router";
 
-import Home from "./Components/UserFeedback/FeedbackHome";
+import Home from "./Components/FeedbackHome";
 
 //Feedback
-import AddRate from "./Components/UserFeedback/Feedback/Add-Rates/AddRate";
-import RateDetails from "./Components/UserFeedback/Feedback/Rate/RateDetails";
+import AddRate from "./Components/Feedback/Add-Rates/AddRate";
+import RateDetails from "./Components/Feedback/Rate/RateDetails";
 //Complaint
-import ValidatedDetails from "./Components/UserFeedback/Complaints/Complaints/MyComplaints";
-import AddComplaint from "./Components/UserFeedback/Complaints/Add-Complaint/AddComplaint";
-import MyRate from "./Components/UserFeedback/Feedback/MyRate/MyRate";
-import UpdateRate from "./Components/UserFeedback/Feedback/UpdateRate/UpdateRate";
-import UpdateComplaint from "./Components/UserFeedback/Complaints/UpdateComplaint/UpdateComplaint";
-import AdminDash from "./Components/UserFeedback/Complaints/AdminDash/FeedbackAdminDash";
-import Reply from "./Components/UserFeedback/Complaints/AdminDash/Reply";
+import ValidatedDetails from "./Components/Complaints/Complaints/MyComplaints";
+import AddComplaint from "./Components/Complaints/Add-Complaint/AddComplaint";
+import MyRate from "./Components/Feedback/MyRate/MyRate";
+import UpdateRate from "./Components/Feedback/UpdateRate/UpdateRate";
+import UpdateComplaint from "./Components/Complaints/UpdateComplaint/UpdateComplaint";
+import AdminDash from "./Components/Complaints/AdminDash/FeedbackAdminDash";
+import Reply from "./Components/Complaints/AdminDash/Reply";
 
 function App() {
   return (
