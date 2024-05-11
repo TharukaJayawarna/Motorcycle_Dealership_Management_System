@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import './colours.css';
 
 const AdditionalPayment = () => {
     const [additionalPayments, setAdditionalPayments] = useState([]);
