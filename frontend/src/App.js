@@ -53,6 +53,20 @@ import UpdatePromo from './Components/Promo_and_Notify_UpdatePromo/UpdatePromo';
 import DisplayPromo from './Components/Promo_and_Notify_DisplayPromo/DisplayPromo';
 import NotificationForm from './Components/Promo_and_Notify_NotificationForm/NotificationForm';
 
+
+
+//Feedback
+import AddRate from "./Components/Feedback/Add-Rates/AddRate";
+import RateDetails from "./Components/Feedback/Rate/RateDetails";
+//Complaint
+import ValidatedDetails from "./Components/Complaints/Complaints/MyComplaints";
+import AddComplaint from "./Components/Complaints/Add-Complaint/AddComplaint";
+import MyRate from "./Components/Feedback/MyRate/MyRate";
+import UpdateRate from "./Components/Feedback/UpdateRate/UpdateRate";
+import UpdateComplaint from "./Components/Complaints/UpdateComplaint/UpdateComplaint";
+import AdminDash from "./Components/Complaints/AdminDash/FeedbackAdminDash";
+import Reply from "./Components/Complaints/AdminDash/Reply";
+
 function App() {
   const ProtectedRoute = ({ children }) => {
     const isAuthenticated = localStorage.getItem("jsonwebtoken") ? true : false;
@@ -150,13 +164,27 @@ function App() {
         </Routes>
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/mainhome" element={<Home1 />} />
           <Route path="/addpromo" element={<AddPromo />} />
           <Route path="/promodetails" element={<Promos />} />
           <Route path="/promodetails/:id" element={<UpdatePromo />} />
           <Route path="/displaypromo" element={<DisplayPromo />} />
           <Route path="/notifications" element={<NotificationForm />} />
+
+          
+          {/*Feedback and Rating*/}
+          <Route path="/add-feedback" element={<AddRate />} />
+          <Route path="/ratedetails" element={<RateDetails />} />
+          <Route path="/myrate" element={<MyRate />} />
+          <Route path="/updaterate/:id" element={<UpdateRate />} />
+
+          {/*Complaint*/}
+          <Route path="/validatedDetails" element={<ValidatedDetails />} />
+          <Route path="/add-complaint" element={<AddComplaint />} />
+          <Route path="/updatecomplaint/:id" element={<UpdateComplaint />} />
+          <Route path="/admindash" element={<AdminDash />} />
+          <Route path="/reply/:id" element={<Reply />} />
         </Routes>
       </BrowserRouter>
     </div>
