@@ -1,4 +1,4 @@
-const Supplier= require("../Model/Availibilitymodel")
+const Availibility= require("../Model/Availibilitymodel")
 
 
 const getAllAvailibility = async (_req, res, _next) => {
@@ -23,12 +23,12 @@ exports.getAllAvailibility  = getAllAvailibility;
 
 const addAvailibility  = async (req, res, _next) => {
 
-    const{ID, UserName, email, password} = req.body; 
+    const{Name,ID, UserName, email,} = req.body; 
 
     let  Availibility;
 
     try{
-        suppliers = new  Availibility ({ID,UserName,email,password});
+        suppliers = new  Availibility ({Name,ID,UserName,email});
         await  Availibility .save();
     }catch (err)
 { 
@@ -67,13 +67,13 @@ exports.getById = getById;
 // Update  Availibility  Details
 const UpdateAvailibility  = async (req, res, _next) => {
     const id = req.params.id; 
-    const{ID, UserName,email, password} = req.body; 
+    const{Name,ID, UserName,email} = req.body; 
 
     let  Availibility;
 
     try{
         Availibility = await  Availibility.findByIdAndUpdate(id,
-            {ID:ID, Userame: UserName, email: email, password: password});
+            {Name:Name,ID:ID, Userame: UserName, email: email});
             Availibility = await  Availibility.save();
     }catch(err){
         console.log(err);

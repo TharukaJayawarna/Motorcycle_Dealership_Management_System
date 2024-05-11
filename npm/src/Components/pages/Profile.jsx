@@ -1,70 +1,61 @@
-import React from 'react';
-import './Suppliers.css';
-import Sidemenu from '../Sidemenu'; // Import Sidemenu component
-import Box from '@mui/material/Box'; // Import Box component from MUI
+import React, { useEffect, useState } from 'react';
+import Sidemenu from '../Sidemenu';
+import axios from 'axios';
+
+const URL = "http://localhost:5000/suppliers";
+
+const fetchHandler = async () => {
+    try {
+        const response = await axios.get(URL);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching suppliers:", error);
+        return [];
+    }
+};
 
 function Suppliers() {
-    // Hardcoded supplier data (you can replace this with API data)
-    const [supplier] = React.useState({
-        SuppliersName: 'John Smith',
-        SuppliersID: 'BCS0073',
-        Contact: '0703158656',
-        Email: 'john.smith@example.com',
-        Address: '123 Main St, Anytown, USA',
-        profileImage: 'https://via.placeholder.com/150', // Placeholder image URL
-        Suppliers: 'Suppliers-Profile',
-    });
+    const [suppliers, setSuppliers] = useState([]);
 
-    // Event handlers for the buttons
-    const handleSave = () => {
-        // Handle save action
-        console.log('Save button clicked');
-        // Add your save logic here
-    };
+    useEffect(() => {
+        fetchHandler().then((data) => {
+            if (data && Array.isArray(data.suppliers)) {
+                setSuppliers(data.suppliers);
+            } else {
+                console.error("Data format unexpected:", data);
+            }
+        });
+    }, []);
 
-    const handleUpdate = () => {
-        // Handle update action
-        console.log('Update button clicked');
-        // Add your update logic here
-    };
+    // Define the Supplier component within the same file
+    function Supplier({ supplier }) {
+        const { _SuppliersName, SuppliersID, email, Address } = supplier;
 
-    const handleDelete = () => {
-        // Handle delete action
-        console.log('Delete button clicked');
-        // Add your delete logic here
-    };
+        return (
+            <div>
+                <h2>Supplier Name: {_SuppliersName}</h2>
+                <h3>Supplier ID: {SuppliersID}</h3>
+                <p>Email: {email}</p>
+                <p>Address: {Address}</p>
+                <button>Update</button>
+                <button>Delete</button>
+            </div>
+        );
+    }
 
     return (
         <div>
-            <Box height={30} />
-            <Box sx={{ display: 'flex' }}>
-                <Sidemenu /> {/* Include Sidemenu component */}
-                
-                {/* Main content area */}
-                <Box
-                    component="main"
-                    sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
-                >
-                    <div className='suppliers-profile'>
-                        <div className='profile-header'>
-                            <img src={supplier.profileImage} alt='Profile' className='profile-image' />
-                            <h2>{supplier.Suppliers}</h2>
-                        </div>
-                        <div className='profile-details'>
-                            <p><strong>Suppliers Name:</strong> {supplier.SuppliersName}</p>
-                            <p><strong>Suppliers ID:</strong> {supplier.SuppliersID}</p>
-                            <p><strong>Contact:</strong> {supplier.Contact}</p>
-                            <p><strong>Email:</strong> {supplier.Email}</p>
-                            <p><strong>Address:</strong> {supplier.Address}</p>
-                        </div>
-                        <div className='action-buttons'>
-                            <button onClick={handleSave} className='action-button save-button'>Save</button>
-                            <button onClick={handleUpdate} className='action-button update-button'>Update</button>
-                            <button onClick={handleDelete} className='action-button delete-button'>Delete</button>
-                        </div>
+            <Sidemenu />
+            <h1>Supplier Details</h1>
+            {suppliers.length > 0 ? (
+                suppliers.map((supplier, i) => (
+                    <div key={i}>
+                        <Supplier supplier={supplier} />
                     </div>
-                </Box>
-            </Box>
+                ))
+            ) : (
+                <p>No suppliers found</p>
+            )}
         </div>
     );
 }

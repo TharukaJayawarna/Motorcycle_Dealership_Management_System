@@ -1,18 +1,12 @@
-import React from 'react' 
-import Sidemenu from "../Sidemenu";
-import Box from "@mui/material/Box";
+import React from 'react';
+import MaxWidthDialog from './MaxWidthDialog';
 
-export default function Dashboard() {
-  return (
-    <div>
-      <Box height={30}/>
-       <Box sx={{ display: 'flex' }}>
-      <Sidemenu/>
-     <Box component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
-          <div>Notification</div>
-      </Box>
-     </Box>
-    </div>
-  )
-}
+const Notification= ({ formData, open, handleClose }) => {
+    return (
+        <div>
+            <MaxWidthDialog formData={formData} open={open} handleClose={handleClose} />
+        </div>
+    );
+};
+
+export default Notification;

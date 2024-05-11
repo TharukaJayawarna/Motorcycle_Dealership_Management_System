@@ -2,25 +2,23 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const AvailibilitySchema = new Schema({
+    AvailibilityName:{
+        type:String,
+        required:true,
+    },
     AvailibilityID:{
-        type:String,//dataType
-        required:true,//validate
+        type:String,
+        required:true,
     },
 
     AvailibilityUserName:{
-        type:String,//dataType
-        required:true,//validate
+        type:String,
+        required:true,
     },
-
-    email:{
-        type:String,//dataType
-        required:true,//validate
-    },
-
-    password:{
-        type:String,//dataType
-        required:true,//validate
-    },
+    email:{     
+        type:String,
+        required:true,
+    }, 
 
 });
 
