@@ -1,0 +1,81 @@
+const Promo = require("../modules/Promo_and_Notify_PromoModel");
+
+const getAllPromos = async (req, res, next) => {
+    let promos;
+    try {
+        promos = await Promo.find();
+        if (!promos) {
+            return res.status(404).json({ message: "Promos not found" });
+        }
+        return res.status(200).json({ promos });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ message: "Internal Server Error" });
+    }
+};
+
+const addPromos = async (req, res, next) => {
+    const { description, image, date } = req.body;
+    let promo;
+    try {
+        promo = new Promo({ description, image, date });
+        await promo.save();
+        return res.status(200).json({ promo });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ message: "Internal Server Error" });
+    }
+};
+const getById = async (req, res, next) => {
+    const id = req.params.id;
+    let promo;
+    try {
+        promo = await Promo.findById(id);
+        if (!promo) {
+            return res.status(404).json({ message: "Promo not found" });
+        }
+        return res.status(200).json({ promo });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ message: "Internal Server Error" });
+    }
+};
+
+const updatePromo = async (req, res, next) => {
+    const id = req.params.id;
+    const { description, image, date  } = req.body;
+    let promo;
+    try {
+        promo = await Promo.findByIdAndUpdate(id, { description, image, date  }, { new: true });
+        if (!promo) {
+            return res.status(404).json({ message: "Promo not found" });
+        }
+        return res.status(200).json({ promo });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ message: "Internal Server Error" });
+    }
+};
+
+const deletePromo = async (req, res, next) => {
+    const id = req.params.id;
+    let promo;
+    try {
+        promo = await Promo.findByIdAndDelete(id);
+        if (!promo) {
+            return res.status(404).json({ message: "Promo not found" });
+        }
+        return res.status(200).json({ promo });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ message: "Internal Server Error" });
+    }
+};
+
+module.exports = {
+    getAllPromos,
+    addPromos,
+    getById,
+    updatePromo,
+    deletePromo
+};
