@@ -86,9 +86,8 @@ function UpdatePromo() {
       <div >      
   
       
-      {/* <Nav />   */}
-      {/* <NavigationBar /> <br /> <br />  */}
-
+  <Nav />
+      <NavigationBar /><br />
       <h1 className="unique-heading">Update Promo</h1>  
       <form className="unique-form" onSubmit={handleSubmit}>
       
@@ -125,9 +124,23 @@ function UpdatePromo() {
         <br />
         <br />
         
-        <button  className="unique-button" type="submit">Submit</button>
+        <button  className="unique123-button" type="submit">Submit</button>
       </form><br /><br />
-      <button  className="uni03-button" ><Link to="/promodetails">Go Back</Link></button>
+      <div style={{
+  position: 'absolute',
+  top: '120%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  backgroundColor: 'black',
+  color: 'white',
+  border: 'none',
+  padding: '10px 20px',
+  borderRadius: '5px',
+  textDecoration: 'none',
+  cursor: 'pointer'
+}}>
+  <Link to={`/promodetails/`} style={{ color: 'white' }}>Go Back</Link>
+</div>
     </div>
   );
 

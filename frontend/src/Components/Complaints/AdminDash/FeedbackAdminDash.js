@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
+import NavigationBar from "../../AdminNavigation/NavigationBar";
+
 
 const complaintsURL = "http://localhost:8070/complaints";
 const ratesURL = "http://localhost:8070/rates";
@@ -53,6 +55,8 @@ function AdminDash() {
 
   return (
     <div className="fullbox">
+  
+      <NavigationBar />
       <div className="dash_button_set">
         <button className="add_rate" onClick={handlePrint}>
           Generate Report

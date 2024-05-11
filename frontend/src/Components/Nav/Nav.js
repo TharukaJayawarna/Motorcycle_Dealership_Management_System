@@ -30,7 +30,7 @@ const Nav = () => {
         window.location.reload();
       }, 2000);
       setAuthenticated(false); // Update local state on logout
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.error("Logout failed:", error);
       // Show error message
@@ -45,8 +45,8 @@ const Nav = () => {
   return (
     <div className="authentication-nav-container">
       {isAuthenticated ? (
-        <nav class="authentication-navbar">
-          <div class="authentication-navbar-right">
+        <nav className="authentication-navbar">
+          <div className="authentication-navbar-right">
             <Link to={"/profile"}>
               <span style={{ marginRight: "20px" }} className="span-btn">
                 Profile
@@ -58,8 +58,13 @@ const Nav = () => {
           </div>
         </nav>
       ) : (
-        <nav class="authentication-navbar">
-          <div class="authentication-navbar-right">
+        <nav className="authentication-navbar">
+          <div className="authentication-navbar-right">
+            <li className="home-ll">
+              <Link to="/login12" className="">
+                <h1>Supplier Portal</h1>
+              </Link>
+            </li>
             <li className="home-ll">
               <Link to="/login" className="">
                 <h1>Login</h1>

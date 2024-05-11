@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaChevronLeft, FaChevronRight, FaHome, FaUserAlt, FaBoxOpen, FaListAlt, FaCommentAlt, FaExclamationTriangle } from "react-icons/fa"; // Importing more icons
+import { FaChevronLeft, FaChevronRight, FaHome, FaUserAlt, FaBoxOpen, FaListAlt, FaCommentAlt, FaExclamationTriangle, FaTools } from "react-icons/fa"; // Importing more icons
 
 function NavigationBar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -25,11 +25,12 @@ function NavigationBar() {
           <Link to="/orderdash">
             <FaListAlt /> Order List
           </Link>
-          <Link to="/analyze_feedback">
-            <FaCommentAlt /> Analyze Feedback
+          <Link to="/admindash">
+            <FaCommentAlt /> Analyze Feedback & Complaints
           </Link>
+      
           <Link to="/analyze_complaints">
-            <FaExclamationTriangle /> Analyze Complaints
+            <FaTools /> Service & Repair
           </Link>
         </div>
       )}

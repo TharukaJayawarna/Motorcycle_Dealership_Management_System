@@ -4,6 +4,8 @@ import "./Rate.css";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import { FaRegUserCircle } from "react-icons/fa";
+import Home_navbar from "../../Inventory_Management_Home_navbar/Home_navbar";
+import Home_footer from "../../Inventory_Management_Home_footer/Home_footer";
 
 const URL = "http://localhost:8070/rates";
 
@@ -37,6 +39,7 @@ const RateDetails = () => {
 
   return (
     <div>
+      <Home_navbar/>
       <div className="">
         <div className="film_box_details">
           <h1 className="cen_h1">Review And Ratings</h1>
@@ -104,6 +107,7 @@ const RateDetails = () => {
           </div>
         </div>
       </div>
+      <Home_footer/>
     </div>
   );
 };

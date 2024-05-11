@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import Home_navbar from "../../Inventory_Management_Home_navbar/Home_navbar";
+import Home_footer from "../../Inventory_Management_Home_footer/Home_footer";
 
 function AddComplaint() {
   const navigate = useNavigate();
@@ -49,6 +51,7 @@ function AddComplaint() {
 
   return (
     <div>
+      <Home_navbar/>
       <div>
         <div className="rate-full-box">
           <div>
@@ -95,6 +98,7 @@ function AddComplaint() {
           </div>
         </div>
       </div>
+      <Home_footer/>
     </div>
   );
 }

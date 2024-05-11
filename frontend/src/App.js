@@ -164,6 +164,7 @@ function App() {
           <Route path="/report" element={<Report />} />
           <Route path="/viewitemlist/:id" element={<Update_item />} />
           <Route path="/viewmodellist/:id" element={<Update_model />} />
+          <Route path="/home-main" element={<Home />} />
 
           <Route
             path="/userhomegallery/motorcycle-models"
