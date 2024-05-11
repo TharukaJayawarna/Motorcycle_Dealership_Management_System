@@ -1,4 +1,4 @@
-const Supplier= require("../Model/suppliermodel")
+const Supplier= require("../modules/suppliermodel")
 
 
 const getAllsuppliers = async (_req, res, _next) => {

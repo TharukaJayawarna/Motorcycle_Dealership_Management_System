@@ -66,6 +66,7 @@ export default function AvailabilityList() {
   const [newSupplier, setNewSupplier] = useState({ name: '', code: '', username: '', email: '' });
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [errors, setErrors] = useState({});
 
   // Handle page change
   const handleChangePage = (event, newPage) => {
@@ -84,9 +85,30 @@ export default function AvailabilityList() {
     setPage(0);
   };
 
+  // Function to validate the form fields
+  const validateForm = () => {
+    const newErrors = {};
+    if (!newSupplier.name) {
+      newErrors.name = 'Name is required';
+    }
+    if (!newSupplier.code) {
+      newErrors.code = 'ID is required';
+    }
+    if (!newSupplier.username) {
+      newErrors.username = 'Username is required';
+    }
+    if (!newSupplier.email) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newSupplier.email)) {
+      newErrors.email = 'Invalid email format';
+    }
+    return newErrors;
+  };
+
   // Function to handle edit button click
   const handleEditClick = (row) => {
     setSelectedRow(row);
+    setNewSupplier(row);
     setEditDialogOpen(true);
   };
 
@@ -112,10 +134,16 @@ export default function AvailabilityList() {
 
   // Handle form submission for adding or editing a supplier
   const handleFormSubmit = () => {
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
     if (selectedRow) {
       // Edit existing supplier
       const updatedRows = rows.map((row) =>
-        row.code === selectedRow.code ? selectedRow : row
+        row.code === selectedRow.code ? newSupplier : row
       );
       setRows(updatedRows);
       setSnackbarMessage('Supplier details updated successfully');
@@ -204,7 +232,7 @@ export default function AvailabilityList() {
                             <TableCell key={column.id} align={column.align}>
                             <IconButton onClick={() => handleEditClick(row)}>
                               <EditIcon />
-                            </IconButton>
+                            </IconButton> 
                             <IconButton onClick={() => handleDeleteClick(row)}>
                               <DeleteIcon />
                             </IconButton>
@@ -258,60 +286,40 @@ export default function AvailabilityList() {
               label="Name"
               type="text"
               fullWidth
-              value={selectedRow ? selectedRow.name : newSupplier.name}
-              onChange={(e) => {
-                const newValue = e.target.value;
-                if (selectedRow) {
-                  setSelectedRow({ ...selectedRow, name: newValue });
-                } else {
-                  setNewSupplier({ ...newSupplier, name: newValue });
-                }
-              }}
+              value={newSupplier.name}
+              onChange={(e) => setNewSupplier({ ...newSupplier, name: e.target.value })}
+              error={!!errors.name}
+              helperText={errors.name}
             />
             <TextField
               margin="dense"
               label="ID"
               type="text"
               fullWidth
-              value={selectedRow ? selectedRow.code : newSupplier.code}
-              onChange={(e) => {
-                const newValue = e.target.value;
-                if (selectedRow) {
-                  setSelectedRow({ ...selectedRow, code: newValue });
-                } else {
-                  setNewSupplier({ ...newSupplier, code: newValue });
-                }
-              }}
+              value={newSupplier.code}
+              onChange={(e) => setNewSupplier({ ...newSupplier, code: e.target.value })}
+              error={!!errors.code}
+              helperText={errors.code}
             />
             <TextField
               margin="dense"
               label="Username"
               type="text"
               fullWidth
-              value={selectedRow ? selectedRow.username : newSupplier.username}
-              onChange={(e) => {
-                const newValue = e.target.value;
-                if (selectedRow) {
-                  setSelectedRow({ ...selectedRow, username: newValue });
-                } else {
-                  setNewSupplier({ ...newSupplier, username: newValue });
-                }
-              }}
+              value={newSupplier.username}
+              onChange={(e) => setNewSupplier({ ...newSupplier, username: e.target.value })}
+              error={!!errors.username}
+              helperText={errors.username}
             />
             <TextField
               margin="dense"
               label="Email"
               type="text"
               fullWidth
-              value={selectedRow ? selectedRow.email : newSupplier.email}
-              onChange={(e) => {
-                const newValue = e.target.value;
-                if (selectedRow) {
-                  setSelectedRow({ ...selectedRow, email: newValue });
-                } else {
-                  setNewSupplier({ ...newSupplier, email: newValue });
-                }
-              }}
+              value={newSupplier.email}
+              onChange={(e) => setNewSupplier({ ...newSupplier, email: e.target.value })}
+              error={!!errors.email}
+              helperText={errors.email}
             />
           </DialogContent>
           <DialogActions>

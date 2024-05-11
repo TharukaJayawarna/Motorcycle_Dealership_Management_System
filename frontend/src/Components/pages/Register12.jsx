@@ -4,9 +4,9 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
-import './Register.css'; // Import the CSS file
+import './Register12.css'; // Import the CSS file
 
-export default function Register() {
+export default function Register12() {
     const navigate = useNavigate(); // Initialize useNavigate
 
     // State for form inputs and error messages
@@ -45,7 +45,7 @@ export default function Register() {
         // Add your form submission logic here (e.g., API call to register the user)
 
         // After form submission, navigate to the login page
-        navigate('/login');
+        navigate('/login12');
     };
 
     // Function to validate the form inputs

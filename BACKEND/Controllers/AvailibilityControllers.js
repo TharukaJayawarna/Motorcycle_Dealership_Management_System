@@ -1,4 +1,4 @@
-const Availibility= require("../Model/Availibilitymodel")
+const Availibility= require("../modules/Availibilitymodel")
 
 
 const getAllAvailibility = async (_req, res, _next) => {

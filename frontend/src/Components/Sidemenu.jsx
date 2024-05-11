@@ -140,7 +140,7 @@ export default function MiniDrawer() {
         <List>
           {[
             { text: 'Dashboard', path: '/dashboard', icon: <DashboardIcon /> },
-            { text: 'Profile', path: '/profile', icon: <PersonIcon /> },
+            { text: 'Profile', path: '/profile12', icon: <PersonIcon /> },
             { text: 'Notification', path: '/notification', icon: <NotificationsIcon /> },
             { text: 'Report', path: '/report', icon: <ReportIcon /> },
             { text: 'Availability', path: '/availability', icon: <AvailabilityIcon /> },
@@ -170,8 +170,8 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {[
-            { text: 'Logout', path: '/login', icon: <LogoutIcon /> },
-            { text: 'Loging', path: '/login', icon: <LoginIcon /> },
+            { text: 'Logout', path: '/login12', icon: <LogoutIcon /> },
+            { text: 'Loging', path: '/login12', icon: <LoginIcon /> },
           ].map(({ text, path, icon }) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }} onClick={() => navigateTo(path)}>
               <ListItemButton

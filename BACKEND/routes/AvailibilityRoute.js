@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 //Insert Model
-const Availibility = require("../Model/Availibilitymodel");
+const Availibility = require("../modules/Availibilitymodel");
 //Insert Availibility Controller
-const AvailibilityControllers = require("../Controllers/AvailibilityControllers");
+const AvailibilityControllers = require("../controllers/AvailibilityControllers");
 
 router.get("/",AvailibilityControllers.getAllAvailibility);
 router.post("/",AvailibilityControllers.addAvailibility);

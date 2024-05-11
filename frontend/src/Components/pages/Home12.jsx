@@ -1,9 +1,9 @@
 import React from 'react';
 import Sidemenu from '../Sidemenu';
 import Box from '@mui/material/Box';
-import Register from '../pages/Register'; // Import Register
+import Register from './Register12'; // Import Register
 
-export default function Home() {
+export default function Home12() {
   return (
     <div>
       <Box height={30} />

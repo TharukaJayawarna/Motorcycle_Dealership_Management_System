@@ -4,9 +4,9 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
-import './Login.css'; // Import the CSS file
+import './Login12.css'; // Import the CSS file
 
-export default function Login() {
+export default function Login12() {
     const navigate = useNavigate(); // Initialize useNavigate
 
     // State for form inputs and login credentials
@@ -32,7 +32,7 @@ export default function Login() {
         console.log('Login credentials:', formData);
 
         // After form submission, navigate to the profile page
-        navigate('/Profile');
+        navigate('/Profile12');
     };
 
     return (

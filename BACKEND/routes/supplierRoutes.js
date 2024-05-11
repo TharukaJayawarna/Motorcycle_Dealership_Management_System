@@ -1,9 +1,9 @@
     const express = require("express");
     const router = express.Router();
     //Insert Model
-    const supplier = require("../Model/suppliermodel");
+    const supplier = require("../modules/suppliermodel");
     //Insert Supplier Controller
-    const supplierControllers = require("../Controllers/supplierControllers");
+    const supplierControllers = require("../controllers/supplierControllers");
 
     router.get("/",supplierControllers.getAllsuppliers);
     router.post("/",supplierControllers.addsuppliers);
