@@ -34,6 +34,12 @@ connectDB();
 const ItemModel = require("./modules/ItemModels");
 const BikeModel = require("./modules/BikeModel");
 const CartModel = require("./modules/CartModels");
+const RateRoute = require("./routes/RateRoute.js")
+const ComplaintRoute = require("./routes/ComplaintRoute.js")
+
+//Routes
+app.use('/rates', RateRoute);
+app.use('/complaints', ComplaintRoute);
 
 // Multer configuration for item images
 const storageItem = multer.diskStorage({

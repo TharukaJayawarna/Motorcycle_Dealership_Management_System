@@ -164,7 +164,7 @@ function App() {
         </Routes>
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/mainhome" element={<Home1 />} />
           <Route path="/addpromo" element={<AddPromo />} />
           <Route path="/promodetails" element={<Promos />} />
