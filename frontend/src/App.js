@@ -84,6 +84,18 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import AppRoutes from "./routes/app-routes";
 const queryClient = new QueryClient();
+import Home12 from './Components/pages/Home12';
+import Profile12 from './Components/pages/Profile12';
+import Dashboard from './Components/pages/Dashboard';
+import Suppliers from './Components/pages/Suppliers';
+import Notification from './Components/pages/Notification';
+import Report12 from './Components/pages/Report';
+
+import Avalibility from './Components/pages/Avalibility/Avalibilitylist';  
+import Register12 from './Components/pages/Register12';
+import Login12 from './Components/pages/Login12';
+import Logout12 from './Components/pages/Logout12';
+import Home1234 from "./Components/pages/Home12";
 
 function App() {
   const ProtectedRoute = ({ children }) => {
@@ -223,6 +235,20 @@ function App() {
             <Route path="/update-employee-salary/:id" element={<UpdateEmployeeSalaryForm/>} />
             <Route path="/financial-reports" element={<FinancialReport/>} />
         </Routes>
+
+        <Routes>
+      <Route path="/123" element={<Home1234 />} />
+      <Route path="/register12" element={<Register12 />} />
+      <Route path="/login12" element={<Login12 />} />
+      <Route path="/profile12" element={<Profile12 />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/suppliers" element={<Suppliers />} />
+      <Route path="/notification" element={<Notification />} />
+       <Route path="/report" element={<Report12 />} />
+      <Route path="/logout12" element={<Logout12 />} />
+      <Route path="/availability" element={<Avalibility />} /> 
+
+    </Routes>
       </BrowserRouter>
     </div>
   );
