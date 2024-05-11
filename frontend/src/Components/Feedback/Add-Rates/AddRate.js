@@ -4,6 +4,9 @@ import axios from "axios";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import "./AddRate.css";
+import Home_navbar from "../../Inventory_Management_Home_navbar/Home_navbar";
+import Home_footer from "../../Inventory_Management_Home_footer/Home_footer";
+
 
 function AddRate() {
   const navigate = useNavigate();  // Initialize navigation function
@@ -68,6 +71,8 @@ function AddRate() {
   // JSX to render the component UI
   return (
     <div>
+      <Home_navbar/>
+      
       <div>
         <div className="rate-full-box">
           <div className="">
@@ -126,6 +131,8 @@ function AddRate() {
           </div>
         </div>
       </div>
+      <Home_footer/>
+     
     </div>
   );
 }

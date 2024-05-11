@@ -25,12 +25,10 @@ function NavigationBar() {
           <Link to="/orderdash">
             <FaListAlt /> Order List
           </Link>
-          <Link to="/analyze_feedback">
-            <FaCommentAlt /> Analyze Feedback
+          <Link to="/admindash">
+            <FaCommentAlt /> Analyze Feedback & Complaints
           </Link>
-          <Link to="/analyze_complaints">
-            <FaExclamationTriangle /> Analyze Complaints
-          </Link>
+      
           <Link to="/analyze_complaints">
             <FaTools /> Service & Repair
           </Link>

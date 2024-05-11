@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import NavigationBar from "../AdminNavigation/NavigationBar";
+import Nav from "../Nav/Nav";
 import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import "./Users.css";
 import { Link } from "react-router-dom";
-import Nav from "../Nav/Nav";
+
 import Swal from "sweetalert2";
 
 const URL = "http://localhost:8070/api/v1/user/";

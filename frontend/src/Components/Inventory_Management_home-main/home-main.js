@@ -2,6 +2,7 @@ import React from 'react';
 import Home_navbar from "../Inventory_Management_Home_navbar/Home_navbar";
 import Home_footer from "../Inventory_Management_Home_footer/Home_footer";
 import './home-main.css';
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -16,14 +17,20 @@ function Home() {
         </section>
         <section className="status-buttons-section-x">
           <div className="status-button">
-            <button className="status-btn">Reservation Status</button>
-          </div>
-          <div className="status-button">
-            <button className="status-btn">Pre-Order Status</button>
-          </div>
-          <div className="status-button">
-            <button className="status-btn">Order Status</button>
-          </div>
+          <button className="status-btn">
+  <Link to="/reservationdetails">Reservation Status</Link>
+</button>
+</div>
+<div className="status-button">
+  <button className="status-btn">
+    <Link to="/preorderdetails">Pre-Order Status</Link>
+  </button>
+</div>
+<div className="status-button">
+  <button className="status-btn">
+    <Link to="/orderdetails">Order Status</Link>
+  </button>
+</div>
         </section>
         <section className="featured-section-x">
           <h2>Featured Products</h2>

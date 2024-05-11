@@ -61,7 +61,7 @@ const Nav = () => {
         <nav className="authentication-navbar">
           <div className="authentication-navbar-right">
             <li className="home-ll">
-              <Link to="/supplier" className="">
+              <Link to="/login12" className="">
                 <h1>Supplier Portal</h1>
               </Link>
             </li>
