@@ -1,0 +1,140 @@
+.checkout-container-om {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.checkout-card-om {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 20px;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.checkout-left {
+  flex: 1;
+}
+
+.checkout-right {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.order-details-om {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.order-details-om table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-details-om th,
+.order-details-om td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.order-details-om th {
+  background-color: #f2f2f2;
+}
+
+.order-details-om tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.order-details-om tr:hover {
+  background-color: #ddd;
+}
+
+.order-details-om p {
+  margin: 5px 0;
+}
+
+.popup-content-om {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.account-details-om h3,
+.delivery-details-om h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.account-details-om p,
+.delivery-details-om p {
+  margin-bottom: 5px;
+}
+
+.order-form-om {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+.order-form-om label {
+  font-weight: bold;
+}
+
+.order-form-om input,
+.order-form-om textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.order-form-om .form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-form-om button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.order-form-om button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.order-form-om button[type="button"] {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.success-message-om,
+.error-message-om {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.success-message-om {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.error-message-om {
+  background-color: #f8d7da;
+  color: #721c24;
+}

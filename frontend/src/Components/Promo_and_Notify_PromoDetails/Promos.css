@@ -1,0 +1,166 @@
+/* Promos.css */
+
+/* Container styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Heading styling */
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Search container styling */
+.unique-search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Search input styling */
+#search {
+  width: 100%;
+  max-width: 700px;
+  padding: 15px;
+  border: 3px solid #000507;
+  margin-left: 640px;
+  border-radius: 20px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* Search button styling */
+.unique-search-button {
+  padding: 10px 16px;
+  margin-right: 520px;
+  background-color: #01070e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fadeInLeft 0.5s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.unique-search-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.unique-button-group {
+  display: flex;
+  justify-content:right; /* Optional: Center the buttons horizontally */
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.unique-button-group button {
+  margin: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.unique-button-group button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Promo list styling */
+.promo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+/* No results message styling */
+.no-results {
+  text-align: center;
+  font-size: 18px;
+  color: #f60b0b;
+}
+
+/* Download report button styling */
+.download-report {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.download-report:hover {
+  background-color: #218838;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-button {
+    margin-top: 10px;
+  }
+
+  .promo-list {
+    grid-template-columns: 1fr;
+  }
+}

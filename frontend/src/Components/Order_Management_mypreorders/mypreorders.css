@@ -1,0 +1,84 @@
+.user-pre-order-details-container-hrs {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-title-hrs {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.pre-order-card-container-hrs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+}
+
+.pre-order-card-hrs {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header-hrs {
+    background-color: #f5f5f5;
+    padding: 1rem;
+}
+
+.card-title-hrs {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card-subtitle-hrs {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.card-body-hrs {
+    padding: 1rem;
+}
+
+.card-actions-hrs {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.cancel-button-hrs {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button-hrs:hover {
+    background-color: #c82333;
+}
+
+.back-button-hrs {
+    display: block;
+    margin: 2rem auto 0;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button-hrs:hover {
+    background-color: #0056b3;
+}

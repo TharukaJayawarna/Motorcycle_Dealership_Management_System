@@ -1,0 +1,97 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .card {
+    width: 80%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .card-image {
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .card-image img {
+    margin-left: 450px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .detail {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .detail label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .detail span {
+    color: #666;
+  }
+  
+  .quantity-input {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .buy-now-button,
+  .add-to-cart-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .buy-now-button {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .add-to-cart-button {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .out-of-stock {
+    color: #dc3545;
+    font-weight: bold;
+  }
+
+  .om-heading-1{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+  }
