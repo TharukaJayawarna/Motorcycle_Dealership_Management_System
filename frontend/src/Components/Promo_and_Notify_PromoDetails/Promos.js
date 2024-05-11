@@ -44,9 +44,9 @@ function Promos() {
 
   return (
     <div>
-      {/* <Nav /> */}
-      {/* <NavigationBar /> */}
-      <h1 className="unique-heading">Promo Details Display page</h1>
+     <Nav />
+      <NavigationBar /><br />
+      <h1 className="unique-heading">Promo Details </h1>
       <div className="unique-search-container">
         <input
           onChange={(e) => setSearchQuery(e.target.value)}
@@ -76,7 +76,7 @@ function Promos() {
       
       
       <div className="unique-button-group">
-        <button className="uni03-button">
+        <button className="unique-button">
           <Link to="/addpromo">Add Promo</Link>
         </button>
         <button onClick={handlePrint} className="unique-button">

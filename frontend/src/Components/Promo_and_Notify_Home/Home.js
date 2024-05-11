@@ -7,8 +7,8 @@ import './Home.css';
 function Home1() {
   return (
     <div>
-      {/* <Nav /> */}
-      {/* <NavigationBar /> */}
+     <Nav />
+      <NavigationBar /><br />
       <br /><br />
       <h1 className="unique-heading">Promo & Notification Home</h1>
       <br /> <br />
