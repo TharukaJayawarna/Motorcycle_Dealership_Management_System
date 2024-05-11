@@ -1,0 +1,21 @@
+// modules/PromoModel.js
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const promoSchema = new Schema({
+    description: {
+        type: String,
+        required: true 
+    },
+    image: {
+        type: String,
+        required: true 
+    },
+    date: {
+        type: Date, // assuming countdown time in seconds
+        required: true 
+    }
+    
+});
+
+module.exports = mongoose.model("PromoModel", promoSchema);

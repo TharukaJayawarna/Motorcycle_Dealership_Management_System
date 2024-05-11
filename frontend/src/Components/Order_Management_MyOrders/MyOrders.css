@@ -1,0 +1,75 @@
+.my-orders-container-oue {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.my-orders-heading-oue {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.no-orders-message-oue {
+  text-align: center;
+  color: #666;
+}
+
+.orders-grid-oue {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+}
+
+.order-card-oue {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.order-details-oue p {
+  margin: 0.5rem 0;
+}
+
+.order-actions-oue {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.cancel-order-button-oue {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-order-button-oue:hover {
+  background-color: #c82333;
+}
+
+.back-button-oue {
+  display: block;
+  margin: 2rem auto 0;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button-oue:hover {
+  background-color: #0056b3;
+}

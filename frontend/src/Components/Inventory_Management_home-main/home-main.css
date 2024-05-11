@@ -1,0 +1,227 @@
+/* Home.css */
+
+.home-container-x {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .home-content-x {
+    flex-grow: 1;
+    padding: 2rem;
+  }
+  
+  .hero-section-x {
+    text-align: center;
+    padding: 4rem 0;
+  }
+  
+  .hero-section-x h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-section-x p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .featured-section-x {
+    margin-bottom: 4rem;
+  }
+  
+  .featured-section-x h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .featured-products-x {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2rem;
+  }
+  
+  .product-card-x {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .product-card-x img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .product-card-x h3 {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .product-card-x p {
+    font-size: 1rem;
+    margin: 0 1rem 1rem;
+  }
+  
+  .product-card-x .btn {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .product-card-x .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .about-section-x {
+    text-align: center;
+    padding: 4rem 0;
+  }
+  
+  .about-section-x h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-section-x p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn-x {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-x:hover {
+    background-color: #0056b3;
+  }
+
+  .promotions-section-x {
+    margin-bottom: 4rem;
+  }
+  
+  .promotions-section-x h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .promotions-container-x {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+  }
+  
+  .promotion-card-x {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .promotion-card-x img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .promotion-content-x {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .promotion-content-x h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .promotion-content-x p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .promotion-content-x .btn {
+    align-self: flex-start;
+  }
+  .services-repairs-section-x {
+    margin-bottom: 4rem;
+  }
+  
+  .services-repairs-container-x {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+  }
+  
+  .service-card-x {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .service-card-x h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .service-card-x p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .service-card-x .btn {
+    align-self: flex-start;
+  }
+  /* Home.css */
+
+/* Additional Styles */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+  }
+  
+  .container-x {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Button Styles */
+  .btn-x {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-x:hover {
+    background-color: #0056b3;
+  }
+ 
