@@ -1,40 +1,16 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
 
-const supplierSchema = new Schema({
-    supplierName:{
-        type:String,//dataType
-        required:true,//validate
-    },
+const supplierSchema = new mongoose.Schema({
+    supplierID: { type: String, required: true },
+    supplierName: { type: String, required: true },
+    Invoice_No: { type: String, required: true },
+    amount: { type: Number, required: true },
+},
+{
+    timestamps: true,
+}
+);
 
-    supplierID:{
-        type:String,//dataType
-        required:true,//validate
-    },
+const Supplier = mongoose.model('Supplier', supplierSchema);
 
-    email:{
-        type:String,//dataType
-        required:true,//validate
-    },
-
-    password:{
-        type:String,//dataType
-        required:true,//validate
-    },
-
-    Address:{
-        type:String,//dataType
-        required:true,//validate
-    },
-
-    contactNumber:{
-        type:String,//dataType
-        required:true,//validate 
-    }, 
-});
-
-module.exports = mongoose.model(
-    "suppliermodel",//file name
-    supplierSchema //function name
-
-)
+module.exports = Supplier;
