@@ -1,4 +1,4 @@
-const Service = require("../models/Service");
+const Service = require("../modules/Service");
 
 const serviceController = {
   // create service

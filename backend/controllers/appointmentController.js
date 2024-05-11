@@ -1,5 +1,5 @@
-const Appointment = require("../models/Appointment");
-const sendEmail = require("../util/sendEmail");
+const Appointment = require("../modules/Appointment");
+const sendEmail=require("../util/sendEmail-service&repair");
 const timeNotAvailableEmailTemplate = require("../util/email_templates/timeNotAvailableEmailTemplate");
 const timeAvailableEmailTemplate = require("../util/email_templates/timeAvailableEmailTemplate");
 const appointmentRejectedEmailTemplate = require("../util/email_templates/appointmentRejectedEmailTemplate");

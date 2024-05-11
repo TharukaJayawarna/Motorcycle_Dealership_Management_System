@@ -53,6 +53,50 @@ import UpdatePromo from './Components/Promo_and_Notify_UpdatePromo/UpdatePromo';
 import DisplayPromo from './Components/Promo_and_Notify_DisplayPromo/DisplayPromo';
 import NotificationForm from './Components/Promo_and_Notify_NotificationForm/NotificationForm';
 
+
+
+//Feedback
+import AddRate from "./Components/Feedback/Add-Rates/AddRate";
+import RateDetails from "./Components/Feedback/Rate/RateDetails";
+//Complaint
+import ValidatedDetails from "./Components/Complaints/Complaints/MyComplaints";
+import AddComplaint from "./Components/Complaints/Add-Complaint/AddComplaint";
+import MyRate from "./Components/Feedback/MyRate/MyRate";
+import UpdateRate from "./Components/Feedback/UpdateRate/UpdateRate";
+import UpdateComplaint from "./Components/Complaints/UpdateComplaint/UpdateComplaint";
+import AdminDash from "./Components/Complaints/AdminDash/FeedbackAdminDash";
+import Reply from "./Components/Complaints/AdminDash/Reply";
+
+//financial
+import FinancialManagement from "./Components/FinancialManagement/FinancialManagement";
+import EmployeeSalaryForm from "./Components/EmployeeSalary";
+import EmployeePayment from "./Components/EmplyoeePayment";
+import SupplierForm from "./Components/SupplierForm";
+import SupplierPayment from "./Components/SupplierPayment";
+import AdditionalForm from "./Components/AdditionalForm";
+import AdditionalPayment from "./Components/AdditionalPayment";
+import UpdateEmployeeSalaryForm from "./Components/UpdateEmployeeSalary";
+import FinancialReport from "./Components/FinancialReport";
+
+//service
+import { Toaster } from "react-hot-toast";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import AppRoutes from "./routes/app-routes";
+const queryClient = new QueryClient();
+import Home12 from './Components/pages/Home12';
+import Profile12 from './Components/pages/Profile12';
+import Dashboard from './Components/pages/Dashboard';
+import Suppliers from './Components/pages/Suppliers';
+import Notification from './Components/pages/Notification';
+import Report12 from './Components/pages/Report';
+
+import Avalibility from './Components/pages/Avalibility/Avalibilitylist';  
+import Register12 from './Components/pages/Register12';
+import Login12 from './Components/pages/Login12';
+import Logout12 from './Components/pages/Logout12';
+import Home1234 from "./Components/pages/Home12";
+
 function App() {
   const ProtectedRoute = ({ children }) => {
     const isAuthenticated = localStorage.getItem("jsonwebtoken") ? true : false;
@@ -72,6 +116,13 @@ function App() {
 
   return (
     <div>
+      <>
+      <QueryClientProvider client={queryClient}>
+        <Toaster position="top-center" reverseOrder={false} />
+        <AppRoutes />
+        <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+      </QueryClientProvider>
+    </>
       <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
@@ -150,14 +201,54 @@ function App() {
         </Routes>
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/mainhome" element={<Home1 />} />
           <Route path="/addpromo" element={<AddPromo />} />
           <Route path="/promodetails" element={<Promos />} />
           <Route path="/promodetails/:id" element={<UpdatePromo />} />
           <Route path="/displaypromo" element={<DisplayPromo />} />
           <Route path="/notifications" element={<NotificationForm />} />
+
+          
+          {/*Feedback and Rating*/}
+          <Route path="/add-feedback" element={<AddRate />} />
+          <Route path="/ratedetails" element={<RateDetails />} />
+          <Route path="/myrate" element={<MyRate />} />
+          <Route path="/updaterate/:id" element={<UpdateRate />} />
+
+          {/*Complaint*/}
+          <Route path="/validatedDetails" element={<ValidatedDetails />} />
+          <Route path="/add-complaint" element={<AddComplaint />} />
+          <Route path="/updatecomplaint/:id" element={<UpdateComplaint />} />
+          <Route path="/admindash" element={<AdminDash />} />
+          <Route path="/reply/:id" element={<Reply />} />
+
+
+          {/* financial */}
+          <Route path="/financialdash" element={<FinancialManagement/>} />
+            <Route path="/employee-salary" element={<EmployeeSalaryForm/>} />
+            <Route path="/employee-payment" element={<EmployeePayment/>} />
+            <Route path="/supplier-form" element={<SupplierForm/>} />
+            <Route path="/supplier-payment" element={<SupplierPayment/>} />
+            <Route path="/additional-form" element={<AdditionalForm/>} />
+            <Route path="/additional-payment" element={<AdditionalPayment/>} />
+            <Route path="/update-employee-salary/:id" element={<UpdateEmployeeSalaryForm/>} />
+            <Route path="/financial-reports" element={<FinancialReport/>} />
         </Routes>
+
+        <Routes>
+      <Route path="/123" element={<Home1234 />} />
+      <Route path="/register12" element={<Register12 />} />
+      <Route path="/login12" element={<Login12 />} />
+      <Route path="/profile12" element={<Profile12 />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/suppliers" element={<Suppliers />} />
+      <Route path="/notification" element={<Notification />} />
+       <Route path="/report" element={<Report12 />} />
+      <Route path="/logout12" element={<Logout12 />} />
+      <Route path="/availability" element={<Avalibility />} /> 
+
+    </Routes>
       </BrowserRouter>
     </div>
   );

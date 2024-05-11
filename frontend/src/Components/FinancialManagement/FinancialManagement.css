@@ -1,0 +1,58 @@
+.FinancialManagement {
+  display: flex;
+  background-color: #AFDBF5;
+}
+
+.financial-navbar-container {
+  width: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.financial-content-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.financial-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.financial-button-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.financial-button {
+  border: none;
+  background-color: #73C2FB;
+  border-radius: 5px;
+  padding: 20px 60px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0.5, 0.1);
+  margin: 30px 50px;
+  width: 400px;
+  
+}
+
+.financial-button:hover {
+  background-color: #B0E0E6;
+}
+
+.financial-button img {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.financial-button span {
+  font-size: 18px;
+  font-weight: bold;
+}
