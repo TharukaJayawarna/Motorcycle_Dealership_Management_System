@@ -1,0 +1,17 @@
+const express = require("express");
+const Promorouter = express.Router();
+//Insert Model
+const Promo = require ("../modules/Promo_and_Notify_PromoModel");
+
+const Promo_and_Notify_PromoController = require('../controllers/Promo_and_Notify_PromoController');
+
+//Insert promo controller
+const { getAllPromos, getPromoById, createPromo, updatePromo, deletePromo } = require('../controllers/Promo_and_Notify_PromoController');
+
+Promorouter.get("/",Promo_and_Notify_PromoController.getAllPromos);
+Promorouter.post("/",Promo_and_Notify_PromoController.addPromos);
+Promorouter.get("/:id",Promo_and_Notify_PromoController.getById);
+Promorouter.put("/:id",Promo_and_Notify_PromoController.updatePromo);
+Promorouter.delete("/:id",Promo_and_Notify_PromoController.deletePromo);
+//export
+module.exports = Promorouter;

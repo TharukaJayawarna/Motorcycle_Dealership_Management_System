@@ -1,0 +1,99 @@
+/* Form styling with animations */
+.unique-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #a4ced7;
+  border: 1px solid #348fe3;
+  border-radius: 8px;
+  transition: all 0.3s ease; /* Smooth transition for form */
+}
+
+.uni03-button {
+  background-color: #0b0c01;
+}
+
+ .unique-label{
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 94%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #348fe3;
+  border-radius: 4px;
+  transition: all 0.3s ease; /* Smooth transition for input fields */
+}
+
+/* Unique label style */
+.unique-label {
+  color: #000607;
+}
+
+/* Unique file input styling */
+.file-input {
+  display: none;
+}
+
+/* Image input styling with hover effect */
+.profile-image img {
+  text-align: center;
+  width: 230px;
+  height: 230px;
+  border-radius: 10%;
+  /*transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+.profile-image img:hover {
+ /* transform: scale(1.1); /* Scale up on hover */
+}
+
+.avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  /*transition: all 0.3s ease; /* Smooth transition for avatar image */
+}
+
+.avatar-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  /*transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.avatar-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Darken on hover */
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  form {
+    padding: 10px;
+  }
+
+  input[type="text"],
+  input[type="date"] {
+    padding: 8px;
+  }
+
+  .avatar-image {
+    width: 100px;
+    height: 100px;
+  }
+}

@@ -1,0 +1,65 @@
+ /* Container styles */
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main content styling */
+.dashboard-main {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Paper component styling */
+.dashboard-paper {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+/* Form styling */
+.dashboard-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form element styling */
+.dashboard-form input,
+.dashboard-form textarea {
+    margin-bottom: 12px;
+}
+
+/* Button styling */
+.dashboard-button {
+    margin-top: 16px;
+    width: 100%;
+}
+
+/* Snackbar notification styling */
+.dashboard-snackbar {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Additional styling */
+.dashboard-table {
+    margin-top: 20px;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.dashboard-table th {
+    background-color: #f0f0f0;
+}
