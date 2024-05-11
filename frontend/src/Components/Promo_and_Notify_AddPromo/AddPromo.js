@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import uploadFileToFirebase from "../../utils/UploadFilesToFIreBase";
 import "./AddPromo.css";
 import Nav from "../Nav/Nav";
-// import NavigationBar from "../ManagerNavigation/NavigationBar";
+import NavigationBar from "../ManagerNavigation/NavigationBar";
 import { Link } from 'react-router-dom';
 
 function AddPromo() {
@@ -58,8 +58,8 @@ function AddPromo() {
 
   return (
     <div>
-      {/* <Nav /> */}
-      {/* <NavigationBar /><br/> */}
+       <Nav />
+       <NavigationBar /><br />
       <h1 className="unique-heading">Add Promo</h1><br/>
 
       <form className="unique-form"onSubmit={handleSubmit}>

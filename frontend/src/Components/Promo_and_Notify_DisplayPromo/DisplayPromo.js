@@ -20,7 +20,7 @@ const DisplayPromo = () => {
     <div>
       
        <br/>
-      <h1 className="unique-heading">Display Promotions Page</h1>
+      <h1 className="unique-heading">Promotions Display </h1>
       <br/>
       <br/>
       <div>

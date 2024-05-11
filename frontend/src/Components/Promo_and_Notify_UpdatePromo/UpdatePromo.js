@@ -86,8 +86,8 @@ function UpdatePromo() {
       <div >      
   
       
-      {/* <Nav />   */}
-      {/* <NavigationBar /> <br /> <br />  */}
+  <Nav />
+      <NavigationBar /><br />
 
       <h1 className="unique-heading">Update Promo</h1>  
       <form className="unique-form" onSubmit={handleSubmit}>
