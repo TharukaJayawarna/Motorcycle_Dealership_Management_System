@@ -18,7 +18,7 @@ app.use(express.json());
 app.use('/rates', RateRoute);
 app.use('/complaints', ComplaintRoute);
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8070;
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
