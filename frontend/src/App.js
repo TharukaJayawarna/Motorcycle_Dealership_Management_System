@@ -67,6 +67,17 @@ import UpdateComplaint from "./Components/Complaints/UpdateComplaint/UpdateCompl
 import AdminDash from "./Components/Complaints/AdminDash/FeedbackAdminDash";
 import Reply from "./Components/Complaints/AdminDash/Reply";
 
+//financial
+import FinancialManagement from "./Components/FinancialManagement/FinancialManagement";
+import EmployeeSalaryForm from "./Components/EmployeeSalary";
+import EmployeePayment from "./Components/EmplyoeePayment";
+import SupplierForm from "./Components/SupplierForm";
+import SupplierPayment from "./Components/SupplierPayment";
+import AdditionalForm from "./Components/AdditionalForm";
+import AdditionalPayment from "./Components/AdditionalPayment";
+import UpdateEmployeeSalaryForm from "./Components/UpdateEmployeeSalary";
+import FinancialReport from "./Components/FinancialReport";
+
 function App() {
   const ProtectedRoute = ({ children }) => {
     const isAuthenticated = localStorage.getItem("jsonwebtoken") ? true : false;
@@ -185,6 +196,18 @@ function App() {
           <Route path="/updatecomplaint/:id" element={<UpdateComplaint />} />
           <Route path="/admindash" element={<AdminDash />} />
           <Route path="/reply/:id" element={<Reply />} />
+
+
+          {/* financial */}
+          <Route path="/financialdash" element={<FinancialManagement/>} />
+            <Route path="/employee-salary" element={<EmployeeSalaryForm/>} />
+            <Route path="/employee-payment" element={<EmployeePayment/>} />
+            <Route path="/supplier-form" element={<SupplierForm/>} />
+            <Route path="/supplier-payment" element={<SupplierPayment/>} />
+            <Route path="/additional-form" element={<AdditionalForm/>} />
+            <Route path="/additional-payment" element={<AdditionalPayment/>} />
+            <Route path="/update-employee-salary/:id" element={<UpdateEmployeeSalaryForm/>} />
+            <Route path="/financial-reports" element={<FinancialReport/>} />
         </Routes>
       </BrowserRouter>
     </div>

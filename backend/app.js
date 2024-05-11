@@ -19,6 +19,10 @@ const OrderRoutes = require("./routes/OrderRoutes");
 const PreOrderRoutes = require("./routes/PreOrderRoutes");
 const ReserveRoutes = require("./routes/ReserveRoutes");
 
+const salaryRoute = require('./routes/SalaryRoute');
+const additionalRoute = require('./routes/AdditionalRoute');
+const supplierRoute = require('./routes/SupplierRoute');
+
 const app = express();
 const port = process.env.PORT || 8070;
 
@@ -37,9 +41,11 @@ const CartModel = require("./modules/CartModels");
 const RateRoute = require("./routes/RateRoute.js")
 const ComplaintRoute = require("./routes/ComplaintRoute.js")
 
+
 //Routes
 app.use('/rates', RateRoute);
 app.use('/complaints', ComplaintRoute);
+
 
 // Multer configuration for item images
 const storageItem = multer.diskStorage({
@@ -171,6 +177,10 @@ app.use(express.static("uploads"));
 
 app.use("/promos", Promorouter);
 app.use("/mail", NotificationRouter);
+
+app.use('/api/salaries', salaryRoute);
+app.use('/api/additionals', additionalRoute);
+app.use('/api/suppliers', supplierRoute);
 
 // Start the Server
 app.listen(port, () => console.log(`Server running on port ${port} 🔥`));
