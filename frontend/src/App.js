@@ -28,6 +28,7 @@ import Motorcycle_gallery_Inventory_management from './Components/Inventory_Mana
 import UserHome_Inventory_management from './Components/Inventory_Management_UserHome/UserHome_Inventory_management';
 
 
+
 import SelectedItemDetailsOM from './Components/Order_Management_Selected-item-details-OM/Selected-item-details-OM';
 import OM_cart from './Components/Order_Management_OM_cart/OM_cart';
 import Checkout from './Components/Order_Management_Checkout/Checkout';
@@ -130,6 +131,8 @@ function App() {
     <Route path="/mypreorders" element={<CustomerPreOrderPage />}/>
     <Route path="/myreservations" element={<UserReservationDetailsPage />}/>
     <Route path="/orderreport" element={<ReportPage />}/>
+    <Route path="/home-main" element={<Home />} />
+
 
       </Routes>
 

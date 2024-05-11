@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import "./profile.css";
-import Nav from "../Nav/Nav";
 import { Link, useNavigate } from "react-router-dom";
+import Home_navbar from "../Inventory_Management_Home_navbar/Home_navbar";
+import Home_footer from "../Inventory_Management_Home_footer/Home_footer";
+import Nav from "../Nav/Nav";
 
 const Profile = () => {
   const [userData, setUserData] = useState({});
@@ -72,7 +74,16 @@ const Profile = () => {
 
   return (
     <div>
-      <Nav />
+      {userData.role === "Customer" && (
+        <div>
+          <Home_navbar />
+        </div>
+      )}
+      {userData.role === "Admin" && (
+        <div>
+          <Nav />
+        </div>
+      )}
       <div className="user-profile-container">
         <h1>User Profile</h1>
         <div className="profile-image">
@@ -112,6 +123,11 @@ const Profile = () => {
           </Link>
         </div>
       </div>
+      {userData.role === "Customer" && (
+        <div>
+          <Home_footer />
+        </div>
+      )}
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import Home_navbar from "../Inventory_Management_Home_navbar/Home_navbar";
 import Home_footer from "../Inventory_Management_Home_footer/Home_footer";
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   
@@ -66,26 +67,26 @@ function HomePage() {
             employees, providing a seamless and efficient experience.
           </p>
           <div style={{ display: "flex", gap: "20px" }}>
-            <button
-              
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.8)",
-                color: "black",
-                padding: "15px 30px",
-                border: "none",
-                borderRadius: "5px",
-                cursor: "pointer",
-                fontSize: "18px",
-                fontWeight: "bold",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                transition: "transform 0.3s ease",
-                "&:hover": {
-                  transform: "translateY(-2px)",
-                },
-              }}
-            >
-              Login
-            </button>
+          <Link to="/login">
+      <button
+        style={{
+          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          color: "black",
+          padding: "15px 30px",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+          fontSize: "18px",
+          fontWeight: "bold",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+          transition: "transform 0.3s ease",
+        }}
+      >
+        Login
+      </button>
+    </Link>
+    
+    <Link to="/register">
             <button
               
               style={{
@@ -106,6 +107,7 @@ function HomePage() {
             >
               Sign Up
             </button>
+            </Link>
           </div>
           
         </div>

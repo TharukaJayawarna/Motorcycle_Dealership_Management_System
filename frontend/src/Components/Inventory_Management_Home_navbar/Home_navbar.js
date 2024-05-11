@@ -41,8 +41,8 @@ function Home_navbar() {
               </a>
             </li>
             <li className="IM_profile">
-              <Link to="/userprofile">Profile</Link>
-              <Link to="/logout" style={{ marginLeft: '20px' }}>Logout</Link>
+              <Link to="/profile">Profile</Link>
+              <Link to="/" style={{ marginLeft: '20px' }}>Logout</Link>
             </li>
           </ul>
         </nav>

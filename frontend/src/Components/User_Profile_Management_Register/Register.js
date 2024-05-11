@@ -5,6 +5,7 @@ import Nav from "../Nav/Nav";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import Home_footer from "../Inventory_Management_Home_footer/Home_footer";
 
 function Register() {
   const history = useNavigate();
@@ -113,6 +114,7 @@ function Register() {
           </p>
         </div>
       </div>
+      < Home_footer />
     </div>
   );
 }
