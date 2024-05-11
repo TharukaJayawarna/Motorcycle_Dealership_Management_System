@@ -1,0 +1,119 @@
+/* IM_UpdateModel.css */
+
+.IM_UpdateModel-container {
+    width: 600px; 
+    height: 400px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(50, 146, 184, 0.599);
+    padding: 20px; 
+    border-radius: 20px; 
+    border: 2px;
+    height: fit-content;
+    width: 800px;
+  }
+  
+  .IM_UpdateModel-heading {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 300px;
+    margin-top: 100px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .IM_UpdateModel-h4 {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .IM_UpdateModel-button {
+    background-color: black;
+    color: white;
+    font-size: medium;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .IM_UpdateModel-button:hover {
+    background-color: #333;
+  }
+  
+  .IM_UpdateModel-inventory-dashboard {
+    /* Main container */
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(13, 11, 11, 0.1);
+  }
+  
+  .IM_UpdateModel-form-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+  }
+  
+  .IM_UpdateModel-label {
+    /* Form labels */
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+  }
+  
+  .IM_UpdateModel-input[type="text"],
+  .IM_UpdateModel-input[type="number"],
+  .IM_UpdateModel-input[type="file"],
+  .IM_UpdateModel-select {
+    width: 80%;
+    padding: 12px 10px; /* Adjust padding for better spacing */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 14px; /* Consistent font size */
+  }
+  
+  .IM_UpdateModel-price-input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .IM_UpdateModel-price-input-container p {
+    margin-right: 5px; /* Adjust the spacing between "LKR" and the input field */
+  }
+  
+  .IM_UpdateModel-rectangle {
+    width: 800px; /* Adjust the width as needed */
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(179, 230, 250, 0.599);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .IM_UpdateModel-left-section,
+  .IM_UpdateModel-right-section {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  

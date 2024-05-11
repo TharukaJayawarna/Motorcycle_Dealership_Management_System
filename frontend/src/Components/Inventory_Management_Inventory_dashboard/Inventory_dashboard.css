@@ -1,0 +1,211 @@
+/* Inventory_dashboard.css */
+
+.IM-inventory-container {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(50, 146, 184, 0.599);
+  padding: 20px;
+  border-radius: 10px;
+  height: fit-content;
+  width: 800px;
+}
+
+.IM-Dashboard-inventory-heading {
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 600px;
+  margin-top: 100px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+.IM-vertical-line {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  left: 50%;
+  width: 1px;
+  background-color: #333;
+  transform: translateX(-50%);
+}
+
+.IM-inventory-h4 {
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 300px;
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.IM-word {
+  margin-top: 100pt;
+}
+
+.IM-inventory-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.IM-rectangle {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(179, 230, 250, 0.599);
+  padding: 20px;
+  border-radius: 10px;
+  height: fit-content;
+  width: 800px;
+}
+
+.IM-left-section, .IM-right-section {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.IM-vertical-line {
+  width: 1px;
+  height: 40%;
+  background-color: #000;
+}
+
+.IM-inventory-h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size:large;
+}
+
+.IM-dash-inventory-p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: small;
+}
+
+.IM-inventory-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.IM-inventory-button:hover {
+  background-color: #333;
+}
+
+.IM-inventory-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.IM-report-button {
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: medium;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 650px;
+}
+
+.IM-report-button:hover {
+  background-color: #333;
+}
+.IM-alert-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 300px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.IM-alert-box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}
+
+.IM-alert-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.IM-alert-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.IM-alert-icon i.fa-exclamation-triangle {
+  color: #ffa500;
+}
+
+.IM-alert-icon i.fa-exclamation-circle {
+  color: #dc3545;
+}
+
+.IM-alert-count {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.IM-alert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.IM-alert-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.IM-alert-list li:last-child {
+  border-bottom: none;
+}
+
+.IM-alert-item-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Styling for the View Details button */
+.view-details-button {
+  background-color: black; /* Blue background color */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Padding around the text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style on hover */
+  font-size: 16px; /* Font size */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline from text */
+  display: inline-block; /* Display as inline block */
+}
+
+.view-details-button:hover {
+  background-color: gray; 
+}

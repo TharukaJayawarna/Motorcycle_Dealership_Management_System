@@ -1,0 +1,111 @@
+/* Container styling */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Table styling */
+.promo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.promo-table td {
+  padding: 20px;
+  border-bottom: 1px solid #348fe3;
+}
+
+.profile-image img{
+  text-align: center;
+  width: 230px;
+  height: 230px;
+  border-radius: 10%;
+}
+
+.image-cell {
+  width: 1px;
+  text-align: center;
+}
+
+.avatar-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.avatar-image:hover {
+  transform: scale(1.1);
+}
+
+/* Heading styling */
+.unique-heading{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
+/* Button styling */
+.uni01-button,
+.uni02-button {
+  background-color: #c40f02;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.uni02-button {
+  background-color: #b7c402;
+}
+
+.uni01-button:hover,
+.uni02-button:hover {
+  background-color: #333;
+}
+
+/* Unique button group styling */
+.unique-button-group {
+  display: flex;
+  justify-content:right;
+  margin-top: 10px;
+}
+
+.unique-button-group button {
+  margin-right: 10px;
+}
+
+.unique-button-group button:hover {
+  background-color: #aaa9a8;
+  color: #fff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .avatar-image {
+    width: 80px;
+    height: 80px;
+  }
+}

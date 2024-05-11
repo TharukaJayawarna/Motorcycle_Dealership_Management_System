@@ -1,0 +1,34 @@
+/* NavigationBar.css */
+
+.upper-navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  .vertical-navbar {
+    width: 200px;
+    position: fixed;
+    left: 0;
+    top: 50px; /* Adjust according to your upper navbar height */
+    height: 100%;
+    background-color: #f2f2f2;
+    padding-top: 20px;
+  }
+  
+  .vertical-navbar a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .vertical-navbar a:hover {
+    background-color: #ddd;
+  }
+  
+  .content {
+    margin-left: 200px; /* Same as the width of the vertical navbar */
+    padding: 20px;
+  }
+  
