@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
-import Home from "./Components/User_Profile_Management_Home/Home";
+// import Home from "./Components/User_Profile_Management_Home/Home";
 import Login from "./Components/User_Profile_Management_Login/Login";
 import Register from "./Components/User_Profile_Management_Register/Register";
 import AddUser from "./Components/User_Profile_Management_AddUser/AddUser";
@@ -37,7 +37,7 @@ import BikeDetails from './Components/Order_Management_model-details/model-detai
 import PreOrder from './Components/Order_Management_preorder/preorder';
 import Reserve from './Components/Order_Management_reserve/reserve';
 
-// import Home from './Components/Inventory_Management_home-main/home-main';
+import Home from './Components/Inventory_Management_home-main/home-main';
 import OrderDashboard from './Components/Order_Management_OrderDashboard/OrderDashboard';
 import OrderDetails from './Components/Order_Management_OrderDetails/OrderDetails';
 import ReservationDetailsPage from './Components/Order_Management_reservationdetails/reservationdetails';
@@ -122,7 +122,7 @@ function App() {
       <Route path="/reserve" element={<Reserve />}/>
       <Route path="/preorder" element={<PreOrder />}/>
 
-      <Route path="/home" element={<Home />}/>
+      
      <Route path="/orderdash" element={<OrderDashboard />}/>
      <Route path="/orderdetails" element={<OrderDetails />}/>
      <Route path="/reservationdetails" element={<ReservationDetailsPage />}/>
@@ -130,6 +130,7 @@ function App() {
     <Route path="/mypreorders" element={<CustomerPreOrderPage />}/>
     <Route path="/myreservations" element={<UserReservationDetailsPage />}/>
     <Route path="/orderreport" element={<ReportPage />}/>
+    <Route path="/home" element={<Home/>}/>
 
       </Routes>
 
