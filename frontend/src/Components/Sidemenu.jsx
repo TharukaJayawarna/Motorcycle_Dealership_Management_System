@@ -141,7 +141,7 @@ export default function MiniDrawer() {
           {[
             { text: 'Dashboard', path: '/dashboard', icon: <DashboardIcon /> },
             { text: 'Profile', path: '/profile12', icon: <PersonIcon /> },
-            { text: 'Notification', path: '/notification', icon: <NotificationsIcon /> },
+            
             { text: 'Report', path: '/report', icon: <ReportIcon /> },
             { text: 'Availability', path: '/availability', icon: <AvailabilityIcon /> },
           ].map(({ text, path, icon }) => (

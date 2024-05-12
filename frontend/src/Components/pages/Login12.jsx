@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import { useNavigate, Link } from 'react-router-dom'; // Import useNavigate hook and Link
 import './Login12.css'; // Import the CSS file
 
 export default function Login12() {
@@ -66,10 +66,15 @@ export default function Login12() {
                         margin="normal"
                         type="password"
                     />
-                    <Box mt={2}>
-                        <Button type="submit" variant="contained" color="primary">
+                    <Box mt={2} sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <Button variant="contained" color="primary" type="submit">
                             Login
                         </Button>
+                        <div>
+                            <p>
+                                Don't have an account? <Link to="/register12">Register</Link>
+                            </p>
+                        </div>
                     </Box>
                 </Box>
             </div>
