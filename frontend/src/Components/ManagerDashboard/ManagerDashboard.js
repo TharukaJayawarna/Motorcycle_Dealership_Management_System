@@ -6,8 +6,10 @@ import NavigationBar from "../ManagerNavigation/NavigationBar";
 import Nav from "../Nav/Nav";
 
 function ManagerDashboard() {
-  const [totalIncome, setTotalIncome] = useState(0);
-  const [totalExpense, setTotalExpense] = useState(0);
+
+  const [totalEmployeePayments, setTotalEmployeePayments] = useState(0);
+  const [totalSupplierPayments, setTotalSupplierPayments] = useState(0);
+  const [totalAdditionalPayments, setTotalAdditionalPayments] = useState(0);
 
   useEffect(() => {
     fetchData();
@@ -15,15 +17,21 @@ function ManagerDashboard() {
 
   const fetchData = async () => {
     try {
-      // Fetch total income and total expense data from API
-      const incomeResponse = await axios.get("http://localhost:8070/income");
-      const expenseResponse = await axios.get("http://localhost:8070/expense");
+      // Fetch total income, total expense, total employee payments,
+      // total supplier payments, and total additional payments data from API
 
-      const totalIncomeData = incomeResponse.data.income;
-      const totalExpenseData = expenseResponse.data.expense;
+      const employeePaymentsResponse = await axios.get("http://localhost:8070/employee-payments");
+      const supplierPaymentsResponse = await axios.get("http://localhost:8070/supplier-payments");
+      const additionalPaymentsResponse = await axios.get("http://localhost:8070/additional-payments");
 
-      setTotalIncome(totalIncomeData);
-      setTotalExpense(totalExpenseData);
+      const totalEmployeePaymentsData = employeePaymentsResponse.data.employeePayments;
+      const totalSupplierPaymentsData = supplierPaymentsResponse.data.supplierPayments;
+      const totalAdditionalPaymentsData = additionalPaymentsResponse.data.additionalPayments;
+
+
+      setTotalEmployeePayments(totalEmployeePaymentsData);
+      setTotalSupplierPayments(totalSupplierPaymentsData);
+      setTotalAdditionalPayments(totalAdditionalPaymentsData);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -34,8 +42,10 @@ function ManagerDashboard() {
       <Nav />
       <NavigationBar />
       <Container>
-        <AnalyticCard icon={<FaMoneyBillWave />} value={totalIncome} label="Total Income" />
-        <AnalyticCard icon={<FaMoneyCheck />} value={totalExpense} label="Total Expense" />
+  
+        <AnalyticCard icon={<FaMoneyCheck />} value={totalEmployeePayments} label="Total Employee Payments" />
+        <AnalyticCard icon={<FaMoneyCheck />} value={totalSupplierPayments} label="Total Supplier Payments" />
+        <AnalyticCard icon={<FaMoneyCheck />} value={totalAdditionalPayments} label="Total Additional Payments" />
       </Container>
     </>
   );
@@ -98,6 +108,6 @@ const Card = styled.div`
     letter-spacing: 0.5px;
     line-height: 1.4;
   }
-`;
+};`
 
 export default ManagerDashboard;
