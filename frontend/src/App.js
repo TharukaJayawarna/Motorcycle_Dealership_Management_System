@@ -78,6 +78,12 @@ import AdditionalPayment from "./Components/AdditionalPayment";
 import UpdateEmployeeSalaryForm from "./Components/UpdateEmployeeSalary";
 import FinancialReport from "./Components/FinancialReport";
 
+//service
+import { Toaster } from "react-hot-toast";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import AppRoutes from "./routes/app-routes";
+const queryClient = new QueryClient();
 import Home12 from './Components/pages/Home12';
 import Profile12 from './Components/pages/Profile12';
 import Dashboard from './Components/pages/Dashboard';
@@ -110,6 +116,13 @@ function App() {
 
   return (
     <div>
+      <>
+      <QueryClientProvider client={queryClient}>
+        <Toaster position="top-center" reverseOrder={false} />
+        <AppRoutes />
+        <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+      </QueryClientProvider>
+    </>
       <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
