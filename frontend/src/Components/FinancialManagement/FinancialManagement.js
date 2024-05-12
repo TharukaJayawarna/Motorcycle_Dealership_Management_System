@@ -5,11 +5,17 @@ import empPaymentImage from './images/emp_payment.jpeg';
 import supplierPaymentsImage from './images/sup_payment.jpeg';
 import additionalPaymentsImage from './images/add_payment.jpeg';
 import financialReportsImage from './images/financial_rep.jpeg';
+import NavigationBar from "../ManagerNavigation/NavigationBar";
+import Nav from "../Nav/Nav";
 //import NavigationBar from '../NavigationBar'; // Import the NavigationBar component
 
 function FinancialManagement() {
   return (
+    <div><Nav />
+    <NavigationBar />
     <div className="FinancialManagement">
+      <Nav />
+      <NavigationBar />
       <div className="financial-navbar-container">
       <br/><br/><br/>
         {/* Place the NavigationBar component here */}
@@ -41,6 +47,7 @@ function FinancialManagement() {
         </div>
         <br/><br/><br/><br/><br/>
       </div>
+    </div>
     </div>
   )
 }

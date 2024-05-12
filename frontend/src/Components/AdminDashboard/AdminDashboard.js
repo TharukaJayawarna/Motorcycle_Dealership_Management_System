@@ -1,34 +1,21 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import axios from "axios";
 import { FaUserAlt, FaBox, FaShoppingCart } from "react-icons/fa";
 import { AiOutlineMore } from "react-icons/ai";
 import NavigationBar from "../AdminNavigation/NavigationBar";
 import Nav from "../Nav/Nav";
 
 function AdminDashboard() {
-  const [totalUsers, setTotalUsers] = useState(0);
+  const [totalUsers, setTotalUsers] = useState(5); // Hardcoded total users count
   const [stockLevelPercentage, setStockLevelPercentage] = useState(0);
   const [totalOrderCount, setTotalOrderCount] = useState(0);
 
   useEffect(() => {
-    fetchData();
+    // Fetch stock level percentage and total order count data here
+    // For demonstration purposes, setting dummy values
+    setStockLevelPercentage(75); // Assuming stock level is at 75%
+    setTotalOrderCount(150);
   }, []);
-
-  const fetchData = async () => {
-    try {
-      const usersResponse = await axios.get("http://localhost:8070/user/");
-      const users = usersResponse.data.users;
-      setTotalUsers(users.length);
-
-      // Fetch stock level percentage and total order count data here
-      // For demonstration purposes, setting dummy values
-      setStockLevelPercentage(75); // Assuming stock level is at 75%
-      setTotalOrderCount(150);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
 
   return (
     <>

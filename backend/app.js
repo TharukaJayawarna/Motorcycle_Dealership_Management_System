@@ -182,5 +182,7 @@ app.use('/api/salaries', salaryRoute);
 app.use('/api/additionals', additionalRoute);
 app.use('/api/suppliers', supplierRoute);
 
+
+
 // Start the Server
 app.listen(port, () => console.log(`Server running on port ${port} 🔥`));
