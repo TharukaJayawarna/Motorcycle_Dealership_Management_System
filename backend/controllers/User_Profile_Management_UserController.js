@@ -30,12 +30,24 @@ const getAllUsers = async (req, res) => {
     res.status(200).json({
       status: "success",
       users: users,
+      
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+const getTotalUsers = async (req, res) => {
+  try {
+    const totalUsers = await User.countDocuments();
+    res.status(200).json({
+      status: "success",
       totalUsers: totalUsers,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
+
 
 //get user by id
 const getUser = async (req, res) => {
@@ -101,4 +113,5 @@ module.exports = {
   getAllUsers,
   updateUser,
   deleteUser,
+  getTotalUsers
 };

@@ -52,7 +52,7 @@ function UpdatePromo() {
         }
     
         try {
-            await axios.put(`http://localhost:5000/promos/${id}`, {
+            await axios.put(`http://localhost:8070/promos/${id}`, {
                 description: inputs.description,
                 date: inputs.date,
                 image: uploadImg, // Use uploadImg here instead of inputs.image
