@@ -35,7 +35,9 @@ const ReservationDetailsPage = () => {
     );
 
     return (
-        <div className="reservation-details-container-pl">
+       <div>
+        <div className="full-page-container">
+         <div className="reservation-details-container-pl">
             <h1 className="page-title-pl">Reservation Details</h1>
             <div className="search-container-pl">
                 <input
@@ -75,8 +77,11 @@ const ReservationDetailsPage = () => {
                         ))}
                     </tbody>
                 </table>
+                <a href='http://localhost:3000/orderdash' className="btn-xn">Go Back</a>
             </div>
         </div>
+       </div>
+       </div>
     );
 };
 

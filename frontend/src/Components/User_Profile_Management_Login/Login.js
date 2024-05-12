@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import Nav from "../Nav/Nav";
 import ReCAPTCHA from "react-google-recaptcha";
-import Home_footer from "../Inventory_Management_Home_footer/Home_footer";
+
 
 function Login() {
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ function Login() {
         });
         const role = localStorage.getItem("role");
         if (role === "Admin") {
-          navigate("/userdetails");
+          navigate("/AdminDashboard");
         }
         if (role === "Customer") {
           navigate("/home-main");
@@ -145,7 +145,7 @@ function Login() {
               onChange={onChange}
             />
             <br />
-            <input type="submit" value="Login" />
+            <input type="submit" value="Login"  href="http://localhost:3000/AdminDashboard"/>
           </form>
           {/* Link to register page */}
           <p>
@@ -153,7 +153,7 @@ function Login() {
           </p>
         </div>
       </div>
-      <Home_footer /> 
+      
     </div>
   );
 }

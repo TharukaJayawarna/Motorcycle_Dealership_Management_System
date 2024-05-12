@@ -47,7 +47,9 @@ const BikeDetails = () => {
   };
 
   return (
-    <div>
+   <div>
+    <div className="full-page-container">
+     <div>
       <Home_navbar />
 
       <div className="container">
@@ -117,8 +119,11 @@ const BikeDetails = () => {
         )}
         
       </div>
+      </div>
+      </div>
       <div className="om9"><Home_footer />
     </div></div>
+   
       
   );
 };

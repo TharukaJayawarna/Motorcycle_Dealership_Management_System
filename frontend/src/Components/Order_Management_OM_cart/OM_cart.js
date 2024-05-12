@@ -69,7 +69,9 @@ function Cart() {
   };
 
   return (
-    <div>
+   <div>
+    <div className="full-page-container">
+     <div>
       <Home_navbar />
       <div className="container-om">
         <h3 className="om-heading1">Cart</h3>
@@ -152,11 +154,16 @@ function Cart() {
                 Checkout All Items
               </button>
             </div>
+            
           </div>
+          
         )}
+        </div>
+        </div>
       </div>
       <Home_footer />
     </div>
+   
   );
 }
 

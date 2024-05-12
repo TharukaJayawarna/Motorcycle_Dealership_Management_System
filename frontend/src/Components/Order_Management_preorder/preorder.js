@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './preorder.css'; 
+import './preorder.css';
 
 function PreOrder() {
   const { state } = useLocation();
@@ -12,16 +12,34 @@ function PreOrder() {
   const [paymentSlip, setPaymentSlip] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [validationErrors, setValidationErrors] = useState({
+    customerName: false,
+    email: false,
+    paymentSlip: false,
+  });
 
   if (!state || !state.bike || !state.quantity) {
     return <div>Error: Missing bike details for Pre Order.</div>;
   }
 
   const { bike, quantity } = state;
-  
 
   const handlePlaceOrder = async (e) => {
     e.preventDefault();
+
+    // Validate form fields
+    const errors = {
+      customerName: customerName.trim() === '',
+      email: email.trim() === '' || !isValidEmail(email),
+      paymentSlip: paymentSlip === null,
+    };
+
+    setValidationErrors(errors);
+
+    // Check if there are any validation errors
+    if (Object.values(errors).some(Boolean)) {
+      return;
+    }
 
     try {
       const formData = new FormData();
@@ -40,9 +58,9 @@ function PreOrder() {
         },
       });
 
-      setSuccessMessage(' Pre Order placed successfully!');
+      setSuccessMessage('Pre Order placed successfully!');
       setErrorMessage('');
-      console.log(' Pre Order placed successfully:', response.data);
+      console.log('Pre Order placed successfully:', response.data);
     } catch (error) {
       setErrorMessage('Error placing pre order. Please try again.');
       setSuccessMessage('');
@@ -53,6 +71,10 @@ function PreOrder() {
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     setPaymentSlip(file);
+    setValidationErrors((prevErrors) => ({
+      ...prevErrors,
+      paymentSlip: false,
+    }));
   };
 
   function generateOrderID() {
@@ -62,7 +84,13 @@ function PreOrder() {
   }
 
   const handleCancel = () => {
-    navigate(-1); 
+    navigate(-1);
+  };
+
+  const isValidEmail = (email) => {
+    // Simple email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   return (
@@ -76,56 +104,77 @@ function PreOrder() {
             <p>Bike Price: {bike.Price}</p>
             <p>Quantity: {quantity}</p>
             <p>Colour: {bike.Colour}</p>
-            
           </div>
-          
+
           <form onSubmit={handlePlaceOrder} className="order-form-om">
             <div className="form-group-om">
-              <label htmlFor="customer-name" className="form-label-om">Customer Name:</label>
+              <label htmlFor="customer-name" className="form-label-om">
+                Customer Name:
+              </label>
               <input
                 type="text"
                 id="customer-name"
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
                 required
-                className="form-input-om"
+                className={`form-input-om ${validationErrors.customerName ? 'error' : ''}`}
               />
+              {validationErrors.customerName && (
+                <div className="error-message-om">Please enter your name.</div>
+              )}
             </div>
             <div className="form-group-om">
-              <label htmlFor="email" className="form-label-om">Email:</label>
+              <label htmlFor="email" className="form-label-om">
+                Email:
+              </label>
               <input
                 type="email"
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="form-input-om"
+                className={`form-input-om ${validationErrors.email ? 'error' : ''}`}
               />
+              {validationErrors.email && (
+                <div className="error-message-om">Please enter a valid email address.</div>
+              )}
             </div>
-           
+
             <div className="form-group-om">
-              <label htmlFor="Payment-slip" className="form-label-om">Upload Payment Slip (Image):</label>
+              <label htmlFor="Payment-slip" className="form-label-om">
+                Upload Payment Slip (Image):
+              </label>
               <input
                 type="file"
-                id="Payment-slip" 
+                id="Payment-slip"
                 onChange={handleImageUpload}
                 accept="image/*"
                 required
-                className="form-input-om"
+                className={`form-input-om ${validationErrors.paymentSlip ? 'error' : ''}`}
               />
+              {validationErrors.paymentSlip && (
+                <div className="error-message-om">Please upload a payment slip.</div>
+              )}
             </div>
             <div className="form-actions-om">
-              <button type="submit" className="order-button-om">Place Order</button>
-              <button type="button" onClick={handleCancel} className="cancel-button-om">Cancel</button>
+              <button type="submit" className="order-button-om">
+                Place Order
+              </button>
+              <button type="button" onClick={handleCancel} className="cancel-button-om">
+                Cancel
+              </button>
             </div>
           </form>
           {successMessage && <div className="success-message-om">{successMessage}</div>}
           {errorMessage && <div className="error-message-om">{errorMessage}</div>}
         </div>
-        
+
         <div className="popup-content-om">
           <div className="popup-header-om">
-            <h2 className="popup-heading-om">Before placing the order, please make the adavace payment to the following account and upload the payment slip when you are placing the order:</h2>
+            <h2 className="popup-heading-om">
+              Before placing the order, please make the adavace payment to the following account and
+              upload the payment slip when you are placing the order:
+            </h2>
           </div>
           <div className="popup-body-om">
             <div className="account-details-om">
@@ -145,8 +194,14 @@ function PreOrder() {
               </div>
               <div className="delivery-info-om">
                 <p>LKR 10,000 per bike.</p>
-                <p>After a successful pre order placement, you will receive an email about delivery dates of the bike.</p>
-                <p>Delivery Not Available For Motorcycles. You to come to the shop to fill necessary forms and documents and collect it.</p>
+                <p>
+                  After a successful pre order placement, you will receive an email about delivery
+                  dates of the bike.
+                </p>
+                <p>
+                  Delivery Not Available For Motorcycles. You to come to the shop to fill necessary
+                  forms and documents and collect it.
+                </p>
               </div>
             </div>
           </div>

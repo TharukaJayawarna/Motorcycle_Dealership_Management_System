@@ -71,7 +71,10 @@ function ItemList(props) {
   };
 
   return (
-    <div className="IM-container kh-container">
+    
+   <div>
+    <div className="full-page-container">
+     <div className="IM-container kh-container">
       <h4 className="IM-subheading kh-subheading">Spare parts and Accessories Inventory</h4>
 
       <div className="IM-search-container kh-search-container">
@@ -161,6 +164,8 @@ function ItemList(props) {
         </div>
       ) : null}
     </div>
+   </div>
+   </div>
   );
 }
 

@@ -60,7 +60,10 @@ function Update_item() {
   };
 
   return (
-    <div>
+   <div>
+
+<div className="full-page-container">
+     <div>
       <div>
         <h3 className="IM_UpdateItem-heading">
           Update Item Details in the Inventory
@@ -196,6 +199,8 @@ function Update_item() {
         </form>
       </div>
     </div>
+   </div>
+   </div>
   );
 }
 

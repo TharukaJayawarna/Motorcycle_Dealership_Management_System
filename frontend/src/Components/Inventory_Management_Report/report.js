@@ -51,7 +51,9 @@ const InventoryReport = () => {
   };
 
   return (
-    <div className="inventory-report-container">
+   <div>
+     <div className="full-page-container">
+     <div className="inventory-report-container">
       <h2>Inventory Report</h2>
       <div className="report-tables">
         <div className="items-table">
@@ -105,6 +107,8 @@ const InventoryReport = () => {
         Download Report
       </button>
     </div>
+   </div>
+   </div>
   );
 };
 

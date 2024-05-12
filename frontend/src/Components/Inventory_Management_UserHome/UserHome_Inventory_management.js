@@ -9,9 +9,9 @@ function HomePage() {
   
 
   return (
-    <div>
-      {/* Header Section */}
-      <header
+   <div>
+     {/* Header Section */}
+     <header
         style={{
           backgroundImage:
             "url(https://www.bikebound.com/wp-content/uploads/2022/08/Honda-CB550-Cafe-Racer-9.jpg)",
@@ -112,6 +112,9 @@ function HomePage() {
           
         </div>
       </header>
+    <div className="full-page-container">
+     <div>
+     
       {/* Navigation Bar */}
       <nav
         style={{
@@ -504,10 +507,16 @@ function HomePage() {
   </div>
 </section>
 
+
       </main>
+     
       {/* Footer */}
+      </div>
+  </div>
       <Home_footer /> {/* Assuming Home_footer component renders the footer */}
     </div>
+  
+
   );
 }
 

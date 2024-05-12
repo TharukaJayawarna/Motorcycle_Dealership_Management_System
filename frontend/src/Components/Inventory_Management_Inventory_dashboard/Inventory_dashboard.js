@@ -3,6 +3,8 @@ import './Inventory_dashboard.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import AlertBox from '../Inventory_Management_alert-box/alert-box';
+import NavigationBar from "../AdminNavigation/NavigationBar";
+import Nav from "../Nav/Nav";
 
 function Inventory_dashboard() {
   const [lowInventoryItems, setLowInventoryItems] = useState([]);
@@ -46,9 +48,15 @@ function Inventory_dashboard() {
       console.error(error);
     }
   };
+  
 
   return (
-    <div>
+   <div>
+    <Nav />
+  <NavigationBar />
+<div className="full-page-container">
+    
+    <div className="content-container">
       <h3 className="IM-Dashboard-inventory-heading"> Inventory Dashboard </h3>
 
       {(lowInventoryItemsCount > 0 || lowInventoryBikesCount > 0) && (
@@ -102,7 +110,10 @@ function Inventory_dashboard() {
         <button className="IM-report-button">Generate Reports</button>
       </Link>
     </div>
-  );
+  </div>
+   </div>
+   
+);
 }
 
 export default Inventory_dashboard;

@@ -18,21 +18,31 @@ const Reserve = () => {
     Quantity: 0,
   });
   const [reservationSuccess, setReservationSuccess] = useState(false);
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === "Quantity" && (isNaN(value) || value < 0)) {
-      return;
+    if (name === "Quantity" && (isNaN(value) || value <= 0)) {
+      setErrors({ ...errors, Quantity: "Quantity must be a positive number." });
+    } else if (name === "Email" && !/\S+@\S+\.\S+/.test(value)) {
+      setErrors({ ...errors, Email: "Please enter a valid email address." });
+    } else {
+      setErrors({ ...errors, [name]: "" });
     }
 
     setReserveData({ ...reserveData, [name]: value });
   };
 
   const handleReserve = async () => {
-    if (reserveData.Quantity < 0 || isNaN(reserveData.Quantity)) {
-      alert("Quantity must be a positive number.");
+    if (!reserveData.Cus_Name || !reserveData.Email || reserveData.Quantity <= 0 || isNaN(reserveData.Quantity)) {
+      setErrors({
+        ...errors,
+        Cus_Name: reserveData.Cus_Name ? "" : "Customer Name is required.",
+        Email: reserveData.Email ? "" : "Email is required.",
+        Quantity: reserveData.Quantity > 0 && !isNaN(reserveData.Quantity) ? "" : "Quantity must be a positive number.",
+      });
       return;
     }
 
@@ -49,9 +59,10 @@ const Reserve = () => {
   };
 
   return (
-    <div>
+   <div>
+     <div className="full-page-container">
+     <div>
       <Home_navbar />
-
       <div className="container">
         <div className="om-reserve-card">
           <div className="om-reserve-card-body">
@@ -69,9 +80,10 @@ const Reserve = () => {
                 name="Cus_Name"
                 value={reserveData.Cus_Name}
                 onChange={handleInputChange}
-                className="form-control"
+                className={`form-control ${errors.Cus_Name ? "is-invalid" : ""}`}
                 required
               />
+              {errors.Cus_Name && <div className="invalid-feedback">{errors.Cus_Name}</div>}
               <label htmlFor="Email">Email:</label>
               <input
                 type="email"
@@ -79,10 +91,10 @@ const Reserve = () => {
                 name="Email"
                 value={reserveData.Email}
                 onChange={handleInputChange}
-                className="form-control"
+                className={`form-control ${errors.Email ? "is-invalid" : ""}`}
                 required
-                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
               />
+              {errors.Email && <div className="invalid-feedback">{errors.Email}</div>}
               <label htmlFor="Quantity">Quantity:</label>
               <input
                 type="number"
@@ -90,15 +102,16 @@ const Reserve = () => {
                 name="Quantity"
                 value={reserveData.Quantity}
                 onChange={handleInputChange}
-                className="form-control"
+                className={`form-control ${errors.Quantity ? "is-invalid" : ""}`}
                 required
               />
+              {errors.Quantity && <div className="invalid-feedback">{errors.Quantity}</div>}
             </div>
             <div className="om-reserve-card-actions">
               <button
                 className="btn btn-success"
                 onClick={handleReserve}
-                disabled={!reserveData.Cus_Name || !reserveData.Email || reserveData.Quantity < 0}
+                disabled={!reserveData.Cus_Name || !reserveData.Email || reserveData.Quantity <= 0 || isNaN(reserveData.Quantity) || !/\S+@\S+\.\S+/.test(reserveData.Email)}
               >
                 Reserve
               </button>
@@ -110,7 +123,8 @@ const Reserve = () => {
           </div>
         </div>
       </div>
-
+      </div>
+    </div>
       <Home_footer />
     </div>
   );

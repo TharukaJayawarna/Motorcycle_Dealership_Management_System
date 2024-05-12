@@ -102,6 +102,8 @@ function SelectedItemDetailsOM() {
 
   return (
     <div>
+      <div className="full-page-container">
+      <div>
       <Home_navbar />
       <div className="container">
         <h3 className="om-heading-1">Item Details</h3>
@@ -172,8 +174,11 @@ function SelectedItemDetailsOM() {
           </div>
         </div>
       </div>
+      </div>
+      </div>
       <Home_footer />
     </div>
+    
   );
 }
 

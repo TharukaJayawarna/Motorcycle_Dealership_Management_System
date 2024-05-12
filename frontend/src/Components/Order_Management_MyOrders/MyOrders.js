@@ -35,7 +35,9 @@ function MyOrders() {
   };
 
   return (
-    <div className="my-orders-container-oue">
+    <div>
+      
+      <div className="my-orders-container-oue">
       <h2 className="my-orders-heading-oue">My Orders</h2>
       {orders.length === 0 ? (
         <p className="no-orders-message-oue">No orders found.</p>
@@ -69,6 +71,8 @@ function MyOrders() {
         Go Back
       </button>
     </div>
+    </div>
+    
   );
 }
 

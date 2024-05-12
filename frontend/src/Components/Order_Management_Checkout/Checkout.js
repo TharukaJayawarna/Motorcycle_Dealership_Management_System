@@ -18,6 +18,7 @@ function Checkout() {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [totalAmount, setTotalAmount] = useState(0);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     if (location.state) {
@@ -39,6 +40,10 @@ function Checkout() {
 
   const handleCheckout = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
 
     try {
       const formData = new FormData();
@@ -99,127 +104,164 @@ function Checkout() {
     navigate(-1); // Navigate back to the previous page
   };
 
+  const validateForm = () => {
+    const errors = {};
+
+    if (!customerName.trim()) {
+      errors.customerName = "Customer Name is required";
+    }
+
+    if (!email.trim()) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.email = "Email address is invalid";
+    }
+
+    if (!address.trim()) {
+      errors.address = "Address is required";
+    }
+
+    if (!paymentSlip) {
+      errors.paymentSlip = "Payment slip is required";
+    }
+
+    setErrors(errors);
+
+    return Object.keys(errors).length === 0;
+  };
+
   return (
     <div>
       <HomeNavbar />
-      <div className="checkout-container-om">
-        <div className="checkout-card-om">
-          <div className="checkout-left">
-            <h2>Checkout</h2>
-            {items.length > 1 ? (
-              <table>
-                <thead>
-                  <tr>
-                    <th>Item ID</th>
-                    <th>Item Name</th>
-                    <th>Item Price</th>
-                    <th>Quantity</th>
-                    <th>Net Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {items.map((item, index) => (
-                    <tr key={index}>
-                      <td>{item.Item_ID}</td>
-                      <td>{item.Item_Name}</td>
-                      <td>{item.Item_Price}</td>
-                      <td>{item.quantity || 1}</td>
-                      <td>{(item.Item_Price * (item.quantity || 1)).toFixed(2)}</td>
+      <div className="full-page-container">
+        
+        <div className="checkout-container-om">
+          <div className="checkout-card-om">
+            <div className="checkout-left">
+              <h2>Checkout</h2>
+              {items.length > 1 ? (
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Item ID</th>
+                      <th>Item Name</th>
+                      <th>Item Price</th>
+                      <th>Quantity</th>
+                      <th>Net Amount</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            ) : (
-              items.map((item, index) => (
-                <div key={index} className="order-details-om">
-                  <p>Item ID: {item.Item_ID}</p>
-                  <p>Item Name: {item.Item_Name}</p>
-                  <p>Item Price: {item.Item_Price}</p>
-                  <p>Quantity: {item.quantity || 1}</p>
-                  <p>Net Amount: {(item.Item_Price * (item.quantity || 1)).toFixed(2)}</p>
+                  </thead>
+                  <tbody>
+                    {items.map((item, index) => (
+                      <tr key={index}>
+                        <td>{item.Item_ID}</td>
+                        <td>{item.Item_Name}</td>
+                        <td>{item.Item_Price}</td>
+                        <td>{item.quantity || 1}</td>
+                        <td>{(item.Item_Price * (item.quantity || 1)).toFixed(2)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                items.map((item, index) => (
+                  <div key={index} className="order-details-om">
+                    <p>Item ID: {item.Item_ID}</p>
+                    <p>Item Name: {item.Item_Name}</p>
+                    <p>Item Price: {item.Item_Price}</p>
+                    <p>Quantity: {item.quantity || 1}</p>
+                    <p>Net Amount: {(item.Item_Price * (item.quantity || 1)).toFixed(2)}</p>
+                  </div>
+                ))
+              )}
+              <div className="total-amount-om">
+                <p>Total Amount: {totalAmount.toFixed(2)}</p>
+              </div>
+              <form onSubmit={handleCheckout} className="order-form-om">
+                <div>
+                  <label htmlFor="customer-name">Customer Name:</label>
+                  <input
+                    type="text"
+                    id="customer-name"
+                    value={customerName}
+                    onChange={(e) => setCustomerName(e.target.value)}
+                    required
+                    className={errors.customerName ? "error" : ""}
+                  />
+                  {errors.customerName && <div className="error-message">{errors.customerName}</div>}
                 </div>
-              ))
-            )}
-            <div className="total-amount-om">
-              <p>Total Amount: {totalAmount.toFixed(2)}</p>
+                <div>
+                  <label htmlFor="email">Email:</label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className={errors.email ? "error" : ""}
+                  />
+                  {errors.email && <div className="error-message">{errors.email}</div>}
+                </div>
+                <div>
+                  <label htmlFor="address">Address:</label>
+                  <input
+                    id="address"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    required
+                    className={errors.address ? "error" : ""}
+                  ></input>
+                  {errors.address && <div className="error-message">{errors.address}</div>}
+                </div>
+                <div>
+                  <label htmlFor="payment-slip">Upload Payment Slip (Image):</label>
+                  <input
+                    type="file"
+                    id="payment-slip"
+                    onChange={handleImageUpload}
+                    accept="image/*"
+                    required
+                    className={errors.paymentSlip ? "error" : ""}
+                  />
+                  {errors.paymentSlip && <div className="error-message">{errors.paymentSlip}</div>}
+                </div>
+                <div className="form-actions">
+                  <button type="submit">Place Order</button>
+                  <button type="button" onClick={handleCancel}>
+                    Cancel
+                  </button>
+                </div>
+              </form>
+              {successMessage && (
+                <div className="success-message-om">{successMessage}</div>
+              )}
+              {errorMessage && (
+                <div className="error-message-om">{errorMessage}</div>
+              )}
             </div>
-            <form onSubmit={handleCheckout} className="order-form-om">
-              <div>
-                <label htmlFor="customer-name">Customer Name:</label>
-                <input
-                  type="text"
-                  id="customer-name"
-                  value={customerName}
-                  onChange={(e) => setCustomerName(e.target.value)}
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="email">Email:</label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="address">Address:</label>
-                <input
-                  id="address"
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
-                  required
-                ></input>
-              </div>
-              <div>
-                <label htmlFor="payment-slip">Upload Payment Slip (Image):</label>
-                <input
-                  type="file"
-                  id="payment-slip"
-                  onChange={handleImageUpload}
-                  accept="image/*"
-                  required
-                />
-              </div>
-              <div className="form-actions">
-                <button type="submit">Place Order</button>
-                <button type="button" onClick={handleCancel}>
-                  Cancel
-                </button>
-              </div>
-            </form>
-            {successMessage && (
-              <div className="success-message-om">{successMessage}</div>
-            )}
-            {errorMessage && (
-              <div className="error-message-om">{errorMessage}</div>
-            )}
-          </div>
-          <div className="checkout-right">
-            <div className="popup-content-om">
-              <h2 className="popup-heading-om">
-                Before placing the order, please make the necessary payment to
-                the following account and upload the payment slip when you are
-                placing the order:
-              </h2>
-              <div className="account-details-om">
-                <h3 className="account-heading-om">Account Details:</h3>
-                <p>Account Number: 123456789</p>
-                <p>Account Holder: Jayawarna Auto (PVT) Limited</p>
-                <p>Bank: Commercial Bank</p>
-                <p>Branch: Aluthgama</p>
-              </div>
-              <div className="delivery-details-om">
-                <h3 className="delivery-heading-om">Delivery Details:</h3>
-                <p>Delivery Not Available.</p>
-                <p>
-                  Delivery Can Be Arranged, If After Paying The Proper Transport
-                  Charges. Otherwise, The Customer Has To Come To The Shop And
-                  Collect It.
-                </p>
-                <p>Contact Us to arrange the delivery.</p>
+            <div className="checkout-right">
+              <div className="popup-content-om">
+                <h2 className="popup-heading-om">
+                  Before placing the order, please make the necessary payment to
+                  the following account and upload the payment slip when you are
+                  placing the order:
+                </h2>
+                <div className="account-details-om">
+                  <h3 className="account-heading-om">Account Details:</h3>
+                  <p>Account Number: 123456789</p>
+                  <p>Account Holder: Jayawarna Auto (PVT) Limited</p>
+                  <p>Bank: Commercial Bank</p>
+                  <p>Branch: Aluthgama</p>
+                </div>
+                <div className="delivery-details-om">
+                  <h3 className="delivery-heading-om">Delivery Details:</h3>
+                  <p>Delivery Not Available.</p>
+                  <p>
+                    Delivery Can Be Arranged, If After Paying The Proper Transport
+                    Charges. Otherwise, The Customer Has To Come To The Shop And
+                    Collect It.
+                  </p>
+                  <p>Contact Us to arrange the delivery.</p>
+                </div>
               </div>
             </div>
           </div>

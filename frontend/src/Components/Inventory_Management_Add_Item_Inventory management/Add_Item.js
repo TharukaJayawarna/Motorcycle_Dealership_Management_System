@@ -90,6 +90,7 @@ function Add_Item() {
   };
   return (
     <div>
+      <div className="full-page-container">
       <div>
         <h3 className="add-item-heading">Add new Item to the Inventory</h3>
         <form onSubmit={handleSubmit}>
@@ -208,6 +209,7 @@ function Add_Item() {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 }

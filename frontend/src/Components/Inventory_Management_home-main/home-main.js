@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="home-container-x">
+    <div>
       <Home_navbar />
+      <div className="full-page-container-home">
       <main className="home-content-x">
         <section className="hero-section-x">
           <h1>Welcome to Jayawarna Auto</h1>
@@ -137,6 +138,7 @@ function Home() {
         </section>
 
       </main>
+      </div>
       <Home_footer />
     </div>
   );

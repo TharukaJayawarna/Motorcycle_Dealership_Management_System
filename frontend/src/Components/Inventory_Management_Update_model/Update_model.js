@@ -62,6 +62,7 @@ function UpdateModel() {
 
   return (
     <div>
+      <div className="full-page-container">
       <div>
         <h3 className="IM_UpdateModel-heading">Update Motorcycle Model Details in the Inventory</h3>
         <form onSubmit={handleSubmit}>
@@ -162,6 +163,7 @@ function UpdateModel() {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 }

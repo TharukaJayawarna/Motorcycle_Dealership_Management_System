@@ -67,108 +67,111 @@ function Motorcycle_gallery_Inventory_management(props) {
 
   return (
     <div>
-      <Home_navbar></Home_navbar>
-      <br></br>
-      <div className="gallery-search-bar">
-        <input
-          type="text"
-          placeholder="Find Anything In Here..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <button type="button" onClick={handleSearch}>Search</button>
-      </div>
-      <img src="https://africa-business.com/features/images-africa/motorcycle-spare-parts-africa.jpg" className="gallery-image" alt="img" />
-      <div className="category-buttons">
-        <button
-          className={`category-button ${selectedCategory === "" ? "active" : ""}`}
-          onClick={() => handleCategoryFilter("")}
-        >
-          All
-        </button>
-        <button
-          className={`category-button ${selectedCategory === "Batteries" ? "active" : ""}`}
-          onClick={() => handleCategoryFilter("Batteries")}
-        >
-          Batteries
-        </button>
-        <button
-          className={`category-button ${selectedCategory === "Rasers" ? "active" : ""}`}
-          onClick={() => handleCategoryFilter("Rasers")}
-        >
-          Razors
-        </button>
-        <button
-          className={`category-button ${selectedCategory === "Chain Spocket Set" ? "active" : ""}`}
-          onClick={() => handleCategoryFilter("Chain Spocket Set")}
-        >
-          Chain Sprocket Sets
-        </button>
-        <button
-          className={`category-button ${selectedCategory === "Oil Filters" ? "active" : ""}`}
-          onClick={() => handleCategoryFilter("Oil Filters")}
-        >
-          Oil Filters
-        </button>
-        <button
-          className={`category-button ${selectedCategory === "Clutch Cables" ? "active" : ""}`}
-          onClick={() => handleCategoryFilter("Clutch Cables")}
-        >
-          Clutch Cables
-        </button>
-        <button
-          className={`category-button ${selectedCategory === "Meter Cables" ? "active" : ""}`}
-          onClick={() => handleCategoryFilter("Meter Cables")}
-        >
-          Meter Cables
-        </button>
-        <button
-          className={`category-button ${selectedCategory === "Disk Pads" ? "active" : ""}`}
-          onClick={() => handleCategoryFilter("Disk Pads")}
-        >
-          Disk Pads
-        </button>
-        <button
-          className={`category-button ${selectedCategory === "Brake Liners" ? "active" : ""}`}
-          onClick={() => handleCategoryFilter("Brake Liners")}
-        >
-          Brake Liners
-        </button>
-      </div>
-      <br/>
-     
-      <h2 className="gallery-h2">Spare Parts And Accessories</h2>
-      
-      {noItems && <p>No items found.</p>}
-      <div className="gallery-container">
-        {items.map((item, i) => (
-          <div key={i} className="gallery-item">
-            <img src={`http://localhost:8070/${item.Image}`}  alt={item.Item_Name} />
-            <div className="gallery-item-details">
-              <p className="gallery-p">Item ID: {item.Item_ID}</p>
-              <p className="gallery-p">Name: {item.Item_Name}</p>
-              <p className="gallery-p">Price: LKR {item.Price}</p>
-              <p
-                className={`gallery-button1 ${
-                  item.In_Stock > 0 ? "in-stock" : "out-of-stock"
-                }`}
-              >
-                {item.In_Stock > 0 ? "In Stock" : "Out of Stock"}
-              </p>
-            </div>
-            <button
-              type="button"
-              className="gallery-button"
-              onClick={() => handleViewDetails(item)}
-            >
-              View Details
-            </button>
-          </div>
-        ))}
-      </div>
-      <br />
-      <Home_footer></Home_footer>
+      <div className="full-page-container-home">
+      <div>
+    <Home_navbar></Home_navbar>
+    <br></br>
+    <div className="gallery-search-bar">
+      <input
+        type="text"
+        placeholder="Find Anything In Here..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+      <button type="button" onClick={handleSearch}>Search</button>
     </div>
+    <img src="https://africa-business.com/features/images-africa/motorcycle-spare-parts-africa.jpg" className="gallery-image" alt="img" />
+    <div className="category-buttons">
+      <button
+        className={`category-button ${selectedCategory === "" ? "active" : ""}`}
+        onClick={() => handleCategoryFilter("")}
+      >
+        All
+      </button>
+      <button
+        className={`category-button ${selectedCategory === "Batteries" ? "active" : ""}`}
+        onClick={() => handleCategoryFilter("Batteries")}
+      >
+        Batteries
+      </button>
+      <button
+        className={`category-button ${selectedCategory === "Rasers" ? "active" : ""}`}
+        onClick={() => handleCategoryFilter("Rasers")}
+      >
+        Razors
+      </button>
+      <button
+        className={`category-button ${selectedCategory === "Chain Spocket Set" ? "active" : ""}`}
+        onClick={() => handleCategoryFilter("Chain Spocket Set")}
+      >
+        Chain Sprocket Sets
+      </button>
+      <button
+        className={`category-button ${selectedCategory === "Oil Filters" ? "active" : ""}`}
+        onClick={() => handleCategoryFilter("Oil Filters")}
+      >
+        Oil Filters
+      </button>
+      <button
+        className={`category-button ${selectedCategory === "Clutch Cables" ? "active" : ""}`}
+        onClick={() => handleCategoryFilter("Clutch Cables")}
+      >
+        Clutch Cables
+      </button>
+      <button
+        className={`category-button ${selectedCategory === "Meter Cables" ? "active" : ""}`}
+        onClick={() => handleCategoryFilter("Meter Cables")}
+      >
+        Meter Cables
+      </button>
+      <button
+        className={`category-button ${selectedCategory === "Disk Pads" ? "active" : ""}`}
+        onClick={() => handleCategoryFilter("Disk Pads")}
+      >
+        Disk Pads
+      </button>
+      <button
+        className={`category-button ${selectedCategory === "Brake Liners" ? "active" : ""}`}
+        onClick={() => handleCategoryFilter("Brake Liners")}
+      >
+        Brake Liners
+      </button>
+    </div>
+    <br/>
+   
+    <h2 className="gallery-h2">Spare Parts And Accessories</h2>
+    
+    {noItems && <p>No items found.</p>}
+    <div className="gallery-container">
+      {items.map((item, i) => (
+        <div key={i} className="gallery-item">
+          <img src={`http://localhost:8070/${item.Image}`}  alt={item.Item_Name} />
+          <div className="gallery-item-details">
+            <p className="gallery-p">Item ID: {item.Item_ID}</p>
+            <p className="gallery-p">Name: {item.Item_Name}</p>
+            <p className="gallery-p">Price: LKR {item.Price}</p>
+            <p
+              className={`gallery-button1 ${
+                item.In_Stock > 0 ? "in-stock" : "out-of-stock"
+              }`}
+            >
+              {item.In_Stock > 0 ? "In Stock" : "Out of Stock"}
+            </p>
+          </div>
+          <button
+            type="button"
+            className="gallery-button"
+            onClick={() => handleViewDetails(item)}
+          >
+            View Details
+          </button>
+        </div>
+      ))}
+    </div>
+    <br />
+    </div>
+    <Home_footer></Home_footer>
+  </div></div>
   );
 }
 

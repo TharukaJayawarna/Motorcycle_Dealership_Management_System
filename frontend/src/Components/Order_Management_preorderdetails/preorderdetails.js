@@ -36,7 +36,9 @@ const PreOrderDetailsPage = () => {
   );
 
   return (
-    <div className="pre-order-details-container-kj">
+    <div>
+      <div className="full-page-container">
+      <div className="pre-order-details-container-kj">
       <h1 className="page-title-kj">Pre-Order Details</h1>
       <div className="search-container-kj">
         <input
@@ -100,7 +102,10 @@ const PreOrderDetailsPage = () => {
             ))}
           </tbody>
         </table>
+        <a href='http://localhost:3000/orderdash' className="btn-xn">Go Back</a>
       </div>
+    </div>
+    </div>
     </div>
   );
 };

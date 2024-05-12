@@ -46,7 +46,9 @@ function OrderDetails() {
   );
 
   return (
-    <div className="my-orders-container-wq">
+    <div>
+      
+      <div className="my-orders-container-wq">
       <h2 className="my-orders-heading-wq">Orders List</h2>
       <div className="search-container-wq">
         <input
@@ -109,7 +111,11 @@ function OrderDetails() {
           </tbody>
         </table>
       )}
+      
+       <a href='http://localhost:3000/orderdash' className="btn-xn">Go Back</a>
     </div>
+    </div>
+    
   );
 }
 

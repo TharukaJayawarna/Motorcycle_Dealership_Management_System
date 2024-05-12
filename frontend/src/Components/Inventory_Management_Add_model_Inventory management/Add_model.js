@@ -81,6 +81,7 @@ function Add_model() {
 
   return (
     <div>
+      <div className="full-page-container">
       <div> <h3 className="add-model-heading"> Add new Motorcycle Models to the Inventory </h3>
 <form onSubmit={handleSubmit}>
     <div className="add-model-inventory-dashboard">
@@ -186,6 +187,7 @@ function Add_model() {
 </div>
 </form>
 </div>
+    </div>
     </div>
 
   )

@@ -72,8 +72,12 @@ function ModelList(props) {
     setNoResults(filteredBikes.length === 0);
   }, [searchQuery]);
 
+  
   return (
     <div>
+<div className="full-page-container-home1">
+      <div>
+      
       <h4 className="IM-subheading">Motorcycle Models Inventory</h4>
       <div className="IM-search-container">
         <input
@@ -153,6 +157,9 @@ function ModelList(props) {
 
      
     </div>
+    </div>
+    </div>
+   
   );
 }
 

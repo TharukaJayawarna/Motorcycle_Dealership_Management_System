@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Register.css";
-import Nav from "../Nav/Nav";
+
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import Home_footer from "../Inventory_Management_Home_footer/Home_footer";
+
 
 function Register() {
   const history = useNavigate();
@@ -76,9 +76,9 @@ function Register() {
 
   return (
     <div>
-      <Nav />
+      
       <div style={{ marginTop: "50px" }}>
-        {/* <Nav/> */}
+        
         <div className="register-container">
           <h2>Register</h2>
           <form onSubmit={handleSubmit}>
@@ -114,7 +114,7 @@ function Register() {
           </p>
         </div>
       </div>
-      < Home_footer />
+      
     </div>
   );
 }

@@ -1,20 +1,17 @@
-/* UpdatePromo.css */
 
-/* Container styling */
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
   }
   
-  /* Heading styling */
   h1 {
     text-align: center;
     font-size: 32px;
     margin-bottom: 20px;
   }
   
-  /* File input styling */
+
   #fileInput {
     display: none;
   }
@@ -51,7 +48,7 @@
     background-color: rgba(0, 0, 0, 0.7);
   }
   
-  /* Form input styling */
+  
   input {
     width: 100%;
     padding: 8px;
@@ -60,7 +57,7 @@
     border-radius: 4px;
   }
   
-  /* Button styling */
+ 
   button {
     padding: 10px 20px;
     background-color: #007bff;
@@ -74,7 +71,7 @@
     background-color: #0056b3;
   }
   
-  /* Responsive design */
+
   @media (max-width: 768px) {
     .container {
       padding: 10px;
@@ -88,4 +85,4 @@
       width: 100px;
       height: 100px;
     }
-  }
+  }  

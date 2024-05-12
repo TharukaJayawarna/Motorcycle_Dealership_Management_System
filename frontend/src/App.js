@@ -1,6 +1,10 @@
 import React from "react";
 import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
-// import Home from "./Components/User_Profile_Management_Home/Home";
+import { Toaster } from "react-hot-toast";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import AppRoutes from "./routes/app-routes";
+
 import Login from "./Components/User_Profile_Management_Login/Login";
 import Register from "./Components/User_Profile_Management_Register/Register";
 import AddUser from "./Components/User_Profile_Management_AddUser/AddUser";
@@ -44,38 +48,15 @@ import PreOrderDetailsPage from "./Components/Order_Management_preorderdetails/p
 import CustomerPreOrderPage from "./Components/Order_Management_mypreorders/mypreorders";
 import UserReservationDetailsPage from "./Components/Order_Management_myreservations/myreservations";
 import ReportPage from "./Components/Order_Management_orderreport/orderreport";
+import Home1 from "./Components/Promo_and_Notify_Home/Home";
+import AddPromo from "./Components/Promo_and_Notify_AddPromo/AddPromo";
+import Promos from "./Components/Promo_and_Notify_PromoDetails/Promos";
+import UpdatePromo from "./Components/Promo_and_Notify_UpdatePromo/UpdatePromo";
+import DisplayPromo from "./Components/Promo_and_Notify_DisplayPromo/DisplayPromo";
+import NotificationForm from "./Components/Promo_and_Notify_NotificationForm/NotificationForm";
 
-
-import SelectedItemDetailsOM from './Components/Order_Management_Selected-item-details-OM/Selected-item-details-OM';
-import OM_cart from './Components/Order_Management_OM_cart/OM_cart';
-import Checkout from './Components/Order_Management_Checkout/Checkout';
-import BuyNow from './Components/Order_Management_BuyNow/BuyNow';
-import MyOrders from './Components/Order_Management_MyOrders/MyOrders';
-import BikeDetails from './Components/Order_Management_model-details/model-details'
-import PreOrder from './Components/Order_Management_preorder/preorder';
-import Reserve from './Components/Order_Management_reserve/reserve';
-
-import Home from './Components/Inventory_Management_home-main/home-main';
-import OrderDashboard from './Components/Order_Management_OrderDashboard/OrderDashboard';
-import OrderDetails from './Components/Order_Management_OrderDetails/OrderDetails';
-import ReservationDetailsPage from './Components/Order_Management_reservationdetails/reservationdetails';
-import PreOrderDetailsPage from './Components/Order_Management_preorderdetails/preorderdetails';
-import CustomerPreOrderPage from './Components/Order_Management_mypreorders/mypreorders';
-import UserReservationDetailsPage from './Components/Order_Management_myreservations/myreservations';
-import ReportPage from './Components/Order_Management_orderreport/orderreport';
-import Home1 from './Components/Promo_and_Notify_Home/Home';
-import AddPromo from './Components/Promo_and_Notify_AddPromo/AddPromo';
-import Promos from './Components/Promo_and_Notify_PromoDetails/Promos';
-import UpdatePromo from './Components/Promo_and_Notify_UpdatePromo/UpdatePromo';
-import DisplayPromo from './Components/Promo_and_Notify_DisplayPromo/DisplayPromo';
-import NotificationForm from './Components/Promo_and_Notify_NotificationForm/NotificationForm';
-
-
-
-//Feedback
 import AddRate from "./Components/Feedback/Add-Rates/AddRate";
 import RateDetails from "./Components/Feedback/Rate/RateDetails";
-//Complaint
 import ValidatedDetails from "./Components/Complaints/Complaints/MyComplaints";
 import AddComplaint from "./Components/Complaints/Add-Complaint/AddComplaint";
 import MyRate from "./Components/Feedback/MyRate/MyRate";
@@ -84,7 +65,6 @@ import UpdateComplaint from "./Components/Complaints/UpdateComplaint/UpdateCompl
 import AdminDash from "./Components/Complaints/AdminDash/FeedbackAdminDash";
 import Reply from "./Components/Complaints/AdminDash/Reply";
 
-//financial
 import FinancialManagement from "./Components/FinancialManagement/FinancialManagement";
 import EmployeeSalaryForm from "./Components/EmployeeSalary";
 import EmployeePayment from "./Components/EmplyoeePayment";
@@ -95,24 +75,27 @@ import AdditionalPayment from "./Components/AdditionalPayment";
 import UpdateEmployeeSalaryForm from "./Components/UpdateEmployeeSalary";
 import FinancialReport from "./Components/FinancialReport";
 
-//service
-import { Toaster } from "react-hot-toast";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import AppRoutes from "./routes/app-routes";
-const queryClient = new QueryClient();
-import Home12 from './Components/pages/Home12';
-import Profile12 from './Components/pages/Profile12';
-import Dashboard from './Components/pages/Dashboard';
-import Suppliers from './Components/pages/Suppliers';
-import Notification from './Components/pages/Notification';
-import Report12 from './Components/pages/Report';
-
-import Avalibility from './Components/pages/Avalibility/Avalibilitylist';  
-import Register12 from './Components/pages/Register12';
-import Login12 from './Components/pages/Login12';
-import Logout12 from './Components/pages/Logout12';
+import Home12 from "./Components/pages/Home12";
+import Profile12 from "./Components/pages/Profile12";
+import Dashboard from "./Components/pages/Dashboard";
+import Suppliers from "./Components/pages/Suppliers";
+import Notification from "./Components/pages/Notification";
+import Report12 from "./Components/pages/Report";
+import Avalibility from "./Components/pages/Avalibility/Avalibilitylist";
+import Register12 from "./Components/pages/Register12";
+import Login12 from "./Components/pages/Login12";
+import Logout12 from "./Components/pages/Logout12";
 import Home1234 from "./Components/pages/Home12";
+
+
+// import AdminDashboard from "./pages/admin/dashboard/Dashboard";
+import CustomerDashboard from "./pages/customer/dashboard/Dashboard";
+// import Appointments from "./pages/appointment/index";
+// import Services from "./pages/service/index";
+// import ServiceListView from "./pages/service/ServiceListView";
+
+
+const queryClient = new QueryClient();
 
 function App() {
   const ProtectedRoute = ({ children }) => {
@@ -134,12 +117,15 @@ function App() {
   return (
     <div>
       <>
-      <QueryClientProvider client={queryClient}>
-        <Toaster position="top-center" reverseOrder={false} />
-        <AppRoutes />
-        <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
-      </QueryClientProvider>
-    </>
+        <QueryClientProvider client={queryClient}>
+          <Toaster position="top-center" reverseOrder={false} />
+          <AppRoutes />
+          <ReactQueryDevtools
+            initialIsOpen={false}
+            position="bottom-right"
+          />
+        </QueryClientProvider>
+      </>
       <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
@@ -165,22 +151,43 @@ function App() {
           <Route path="/userdetails/:id" element={<UpdateUser />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/userdashboard" element={<UserDashboard />} />
-          <Route path="/employeedashboard" element={<EmployeeDahsboard />} />
-          <Route path="/managerdashboard" element={<ManagerDashboard />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route
+            path="/employeedashboard"
+            element={<EmployeeDahsboard />}
+          />
+          <Route
+            path="/managerdashboard"
+            element={<ManagerDashboard />}
+          />
+          <Route
+            path="/reset-password"
+            element={<ResetPassword />}
+          />
           <Route path="/otp-sent/:email" element={<OTP />} />
-          <Route path="/AdminDashboard" element={<Admindashboard />} />
+          <Route
+            path="/AdminDashboard"
+            element={<Admindashboard />}
+          />
         </Routes>
 
         <Routes>
-          <Route path="/inventorydash" element={<InventoryDashboard />} />
+          <Route
+            path="/inventorydash"
+            element={<InventoryDashboard />}
+          />
           <Route path="/additem" element={<Add_Item />} />
           <Route path="/viewitemlist" element={<Item_list />} />
           <Route path="/addmodel" element={<Add_model />} />
           <Route path="/viewmodellist" element={<Model_list />} />
           <Route path="/report" element={<Report />} />
-          <Route path="/viewitemlist/:id" element={<Update_item />} />
-          <Route path="/viewmodellist/:id" element={<Update_model />} />
+          <Route
+            path="/viewitemlist/:id"
+            element={<Update_item />}
+          />
+          <Route
+            path="/viewmodellist/:id"
+            element={<Update_model />}
+          />
           <Route path="/home-main" element={<Home />} />
 
           <Route
@@ -189,11 +196,19 @@ function App() {
           />
           <Route
             path="/userhomegallery/parts-and-accessories"
-            element={<Motorcycle_gallery_Inventory_management />}
+            element={
+              <Motorcycle_gallery_Inventory_management />
+            }
           />
-          <Route path="/" element={<UserHome_Inventory_management />} />
+          <Route
+            path="/"
+            element={<UserHome_Inventory_management />}
+          />
 
-          <Route path="/item/:id" element={<SelectedItemDetailsOM />} />
+          <Route
+            path="/item/:id"
+            element={<SelectedItemDetailsOM />}
+          />
           <Route path="/userhomegallery/cart" element={<OM_cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/buynow" element={<BuyNow />} />
@@ -203,19 +218,34 @@ function App() {
           <Route path="/preorder" element={<PreOrder />} />
 
           {/* <Route path="/home" element={<Home />}/> */}
-          <Route path="/orderdash" element={<OrderDashboard />} />
-          <Route path="/orderdetails" element={<OrderDetails />} />
+          <Route
+            path="/orderdash"
+            element={<OrderDashboard />}
+          />
+          <Route
+            path="/orderdetails"
+            element={<OrderDetails />}
+          />
           <Route
             path="/reservationdetails"
             element={<ReservationDetailsPage />}
           />
-          <Route path="/preorderdetails" element={<PreOrderDetailsPage />} />
-          <Route path="/mypreorders" element={<CustomerPreOrderPage />} />
+          <Route
+            path="/preorderdetails"
+            element={<PreOrderDetailsPage />}
+          />
+          <Route
+            path="/mypreorders"
+            element={<CustomerPreOrderPage />}
+          />
           <Route
             path="/myreservations"
             element={<UserReservationDetailsPage />}
           />
-          <Route path="/orderreport" element={<ReportPage />} />
+          <Route
+            path="/orderreport"
+            element={<ReportPage />}
+          />
         </Routes>
 
         <Routes>
@@ -227,7 +257,6 @@ function App() {
           <Route path="/displaypromo" element={<DisplayPromo />} />
           <Route path="/notifications" element={<NotificationForm />} />
 
-          
           {/*Feedback and Rating*/}
           <Route path="/add-feedback" element={<AddRate />} />
           <Route path="/ratedetails" element={<RateDetails />} />
@@ -235,39 +264,85 @@ function App() {
           <Route path="/updaterate/:id" element={<UpdateRate />} />
 
           {/*Complaint*/}
-          <Route path="/validatedDetails" element={<ValidatedDetails />} />
-          <Route path="/add-complaint" element={<AddComplaint />} />
-          <Route path="/updatecomplaint/:id" element={<UpdateComplaint />} />
+          <Route
+            path="/validatedDetails"
+            element={<ValidatedDetails />}
+          />
+          <Route
+            path="/add-complaint"
+            element={<AddComplaint />}
+          />
+          <Route
+            path="/updatecomplaint/:id"
+            element={<UpdateComplaint />}
+          />
           <Route path="/admindash" element={<AdminDash />} />
           <Route path="/reply/:id" element={<Reply />} />
 
-
           {/* financial */}
-          <Route path="/financialdash" element={<FinancialManagement/>} />
-            <Route path="/employee-salary" element={<EmployeeSalaryForm/>} />
-            <Route path="/employee-payment" element={<EmployeePayment/>} />
-            <Route path="/supplier-form" element={<SupplierForm/>} />
-            <Route path="/supplier-payment" element={<SupplierPayment/>} />
-            <Route path="/additional-form" element={<AdditionalForm/>} />
-            <Route path="/additional-payment" element={<AdditionalPayment/>} />
-            <Route path="/update-employee-salary/:id" element={<UpdateEmployeeSalaryForm/>} />
-            <Route path="/financial-reports" element={<FinancialReport/>} />
+          <Route
+            path="/financialdash"
+            element={<FinancialManagement />}
+          />
+          <Route
+            path="/employee-salary"
+            element={<EmployeeSalaryForm />}
+          />
+          <Route
+            path="/employee-payment"
+            element={<EmployeePayment />}
+          />
+          <Route path="/supplier-form" element={<SupplierForm />} />
+          <Route
+            path="/supplier-payment"
+            element={<SupplierPayment />}
+          />
+          <Route
+            path="/additional-form"
+            element={<AdditionalForm />}
+          />
+          <Route
+            path="/additional-payment"
+            element={<AdditionalPayment />}
+          />
+          <Route
+            path="/update-employee-salary/:id"
+            element={<UpdateEmployeeSalaryForm />}
+          />
+          <Route
+            path="/financial-reports"
+            element={<FinancialReport />}
+          />
         </Routes>
 
         <Routes>
-      <Route path="/123" element={<Home1234 />} />
-      <Route path="/register12" element={<Register12 />} />
-      <Route path="/login12" element={<Login12 />} />
-      <Route path="/profile12" element={<Profile12 />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/suppliers" element={<Suppliers />} />
-      <Route path="/notification" element={<Notification />} />
-       <Route path="/report" element={<Report12 />} />
-      <Route path="/logout12" element={<Logout12 />} />
-      <Route path="/availability" element={<Avalibility />} /> 
+          <Route path="/123" element={<Home1234 />} />
+          <Route path="/register12" element={<Register12 />} />
+          <Route path="/login12" element={<Login12 />} />
+          <Route path="/profile12" element={<Profile12 />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/suppliers" element={<Suppliers />} />
+          <Route path="/notification" element={<Notification />} />
+          <Route path="/reportsupllier" element={<Report12 />} />
+          <Route path="/logout12" element={<Logout12 />} />
+          <Route path="/availability" element={<Avalibility />} />
 
-    </Routes>
+
+
+
+
+          <Route path="/customer" element={<CustomerDashboard />} />
+          {/* <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/appointments" element={<Appointments />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/service-list" element={<ServiceListView />} /> */}
+        </Routes>
       </BrowserRouter>
+      {/* <AppRoutes/> */}
+
+      
+       
+    
     </div>
   );
 }

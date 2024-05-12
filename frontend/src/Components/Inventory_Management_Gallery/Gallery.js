@@ -48,9 +48,13 @@ function Gallery(props) {
 
   return (
     <div>
+      <div className="full-page-container">
+<div>
+      
       <Home_navbar />
-
+      
       <br />
+      
       <div className="IM_Gallery-search-bar">
         <input
           type="text"
@@ -99,6 +103,9 @@ function Gallery(props) {
       <br />
       <Home_footer />
     </div>
+    </div>
+    </div>
+    
   );
 }
 

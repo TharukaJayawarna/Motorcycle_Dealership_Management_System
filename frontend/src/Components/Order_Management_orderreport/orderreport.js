@@ -94,7 +94,9 @@ const ReportPage = () => {
   };
 
   return (
-    <div id="report-page-lg">
+    <div>
+      <div className="full-page-container">
+      <div id="report-page-lg">
       <h1 className="report-heading-lg">Order Report</h1>
       <table className="orders-table-lg">
         <thead>
@@ -178,6 +180,8 @@ const ReportPage = () => {
       </table>
 
       <button className="download-button-lg" onClick={handleDownloadReport}>Download Report</button>
+    </div>
+    </div>
     </div>
   );
 };
