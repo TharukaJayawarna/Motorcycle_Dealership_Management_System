@@ -7,9 +7,9 @@ import Nav from "../Nav/Nav";
 
 function ManagerDashboard() {
 
-  const [totalEmployeePayments, setTotalEmployeePayments] = useState(0);
-  const [totalSupplierPayments, setTotalSupplierPayments] = useState(0);
-  const [totalAdditionalPayments, setTotalAdditionalPayments] = useState(0);
+  const [totalEmployeePayments, setTotalEmployeePayments] = useState(500000);
+  const [totalSupplierPayments, setTotalSupplierPayments] = useState(30000);
+  const [totalAdditionalPayments, setTotalAdditionalPayments] = useState(32000);
 
   useEffect(() => {
     fetchData();
@@ -64,7 +64,7 @@ const AnalyticCard = ({ icon, value, label }) => (
   <Card>
     <div className="icon">{icon}</div>
     <div className="content">
-      <div className="value">${value.toLocaleString()}</div>
+      <div className="value">Rs. {value.toLocaleString()}</div>
       <div className="label">{label}</div>
     </div>
   </Card>

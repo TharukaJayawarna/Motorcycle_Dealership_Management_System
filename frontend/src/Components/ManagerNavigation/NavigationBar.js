@@ -8,7 +8,7 @@ function NavigationBar() {
   return (
     <div>
       <div className="vertical-navbar">
-        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/managerdashboard">Dashboard</Link>
         <Link to="/ViewRequest ">View Request </Link>
         
         <Link to="/financialdash">Financial Management</Link>
