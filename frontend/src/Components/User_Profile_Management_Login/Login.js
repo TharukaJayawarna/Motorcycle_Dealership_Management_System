@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import Nav from "../Nav/Nav";
 import ReCAPTCHA from "react-google-recaptcha";
+import Home_footer from "../Inventory_Management_Home_footer/Home_footer";
 
 function Login() {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ function Login() {
           navigate("/userdetails");
         }
         if (role === "Customer") {
-          navigate("/userdashboard");
+          navigate("/home-main");
         }
         if (role === "Employee") {
           navigate("/employeedashboard");
@@ -98,7 +99,7 @@ function Login() {
 
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <div style={{ marginTop: "50px" }}>
         <div className="register-container">
           <h2>Login</h2>
@@ -152,6 +153,7 @@ function Login() {
           </p>
         </div>
       </div>
+      <Home_footer /> 
     </div>
   );
 }

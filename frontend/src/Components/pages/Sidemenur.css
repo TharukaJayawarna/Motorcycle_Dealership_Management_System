@@ -1,0 +1,48 @@
+/* Drawer Styling */
+.MuiDrawer-paper {
+    background-color: #f5f5f5; /* Set background color for the drawer */
+    color: #333; /* Set text color for the drawer */
+  }
+  
+  /* AppBar Styling */
+  .MuiAppBar-root {
+    background-color: #3f51b5; /* Set background color for the AppBar */
+    height: 64px; /* Set height for the AppBar */
+  }
+  
+  /* Toolbar Styling */
+  .MuiToolbar-root {
+    display: flex;
+    justify-content: space-between; /* Space out the content */
+  }
+  
+  /* List Items Styling */
+  .MuiListItemButton-root {
+    padding: 12px 16px; /* Adjust padding for better appearance */
+  }
+  
+  .MuiListItemButton-root:hover {
+    background-color: #e0e0e0; /* Set hover background color */
+  }
+  
+  .MuiListItemIcon-root {
+    color: #757575; /* Set icon color */
+  }
+  
+  .MuiListItemIcon-root:hover {
+    color: #3f51b5; /* Set hover icon color */
+  }
+  
+  /* Typography Styling */
+  .MuiTypography-h6 {
+    font-size: 18px; /* Set font size */
+    font-weight: bold; /* Set font weight */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .MuiDrawer-paper {
+      width: 200px; /* Adjust drawer width for smaller screens */
+    }
+  }
+  
